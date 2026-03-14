@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f0fdf4;
+  --color-brand-100: #dcfce7;
+  --color-brand-200: #bbf7d0;
+  --color-brand-300: #86efac;
+  --color-brand-400: #4ade80;
+  --color-brand-500: #22c55e;
+  --color-brand-600: #16a34a;
+  --color-brand-700: #15803d;
+  --color-brand-800: #166534;
+  --color-brand-900: #14532d;
+  --color-brand-950: #052e16;
+  --color-accent-400: #facc15;
+  --color-accent-500: #eab308;
+  --color-accent-600: #ca8a04;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* === Smooth scrolling & base === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+}
+
+/* === Animations === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.animate-fade-up {
+  animation: fadeInUp 0.8s ease-out both;
+}
+.animate-fade-left {
+  animation: fadeInLeft 0.8s ease-out both;
+}
+.animate-fade-right {
+  animation: fadeInRight 0.8s ease-out both;
+}
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out both;
+}
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* === Hero parallax overlay === */
+.hero-overlay {
+  background: linear-gradient(135deg, rgba(5, 46, 22, 0.85) 0%, rgba(21, 128, 61, 0.7) 50%, rgba(34, 197, 94, 0.5) 100%);
+}
+
+/* === Decorative circles (brand element from PDF) === */
+.circle-deco {
+  border-radius: 9999px;
+  border: 4px solid #22c55e;
+  position: absolute;
+  opacity: 0.15;
+}
+
+/* === Cards hover lift === */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* === Green gradient cards (like mission/vision in PDF) === */
+.green-card {
+  background: linear-gradient(145deg, #166534 0%, #15803d 100%);
+  color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+/* === Section divider === */
+.section-divider {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #22c55e, #eab308);
+  border-radius: 2px;
+}
+
+/* === Nav glass === */
+.nav-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* === Calibre badge === */
+.calibre-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+  transition: all 0.2s ease;
+}
+.calibre-badge:hover {
+  background: #166534;
+  color: white;
+  border-color: #166534;
+}
+
+/* === Icon circle === */
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #22c55e, #15803d);
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+/* === Gallery grid === */
+.gallery-item {
+  overflow: hidden;
+  border-radius: 1rem;
+  position: relative;
+}
+.gallery-item img {
+  transition: transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+.gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5, 46, 22, 0.4), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.gallery-item:hover::after {
+  opacity: 1;
+}
+
+/* WhatsApp button pulse */
+.wa-pulse {
+  position: relative;
+}
+.wa-pulse::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: #22c55e;
+  animation: pulse-ring 2s ease-out infinite;
+  z-index: -1;
+}
