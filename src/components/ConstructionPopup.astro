@@ -1,0 +1,94 @@
+---
+// src/components/ConstructionPopup.astro
+---
+
+<div
+  id="construction-popup"
+  class="fixed inset-0 z-[10000] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+  style="display: flex !important; position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; z-index: 999999 !important; opacity: 1 !important; visibility: visible !important;"
+>
+  <div
+    class="bg-white rounded-3xl p-6 md:p-8 max-w-sm w-full shadow-2xl relative flex flex-col items-center text-center overflow-hidden"
+    id="construction-popup-content"
+  >
+    <!-- Top accent bar -->
+    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-brand-secondary via-brand-tertiary to-brand-secondary"></div>
+
+    <!-- Logo -->
+    <img src="/logo.png" alt="Logo Exportadora Norandino" class="h-12 w-auto object-contain mb-6" />
+
+    <h2 class="font-heading font-bold text-xl md:text-2xl text-brand-primary mb-3">
+      Sitio en Construcción
+    </h2>
+
+    <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+      Nuestra página web estará disponible muy pronto.
+    </p>
+
+  </div>
+</div>
+
+<script>
+  // Script to enforce the popup visibility and prevent DOM tampering
+  document.addEventListener("DOMContentLoaded", enforcePopup);
+  document.addEventListener("astro:page-load", enforcePopup);
+
+  function enforcePopup() {
+    const popupId = "construction-popup";
+    const body = document.body;
+
+    // 1. Initial enforcement
+    body.classList.add("overflow-hidden");
+    body.style.setProperty("overflow", "hidden", "important");
+
+    // 2. The Guard Dog (MutationObserver)
+    const observer = new MutationObserver((mutations) => {
+      let shouldRevert = false;
+
+      mutations.forEach((mutation) => {
+        // Did they try to remove the popup completely?
+        if (mutation.type === "childList") {
+          mutation.removedNodes.forEach((node) => {
+            if (node instanceof HTMLElement && (node.id === popupId || node.querySelector(`#${popupId}`))) {
+              shouldRevert = true;
+            }
+          });
+        }
+        
+        // Did they try to mess with the body overflow or popup display styles?
+        if (mutation.type === "attributes") {
+          const target = mutation.target as HTMLElement;
+          if (target === body && (!target.classList.contains("overflow-hidden") || target.style.overflow !== "hidden")) {
+            target.classList.add("overflow-hidden");
+            target.style.setProperty("overflow", "hidden", "important");
+          }
+          if (target.id === popupId) {
+            target.style.setProperty("display", "flex", "important");
+            target.style.setProperty("opacity", "1", "important");
+            target.style.setProperty("visibility", "visible", "important");
+          }
+        }
+      });
+
+      // If they deleted it, reload the page to restore it completely
+      if (shouldRevert) {
+        window.location.reload();
+      }
+    });
+
+    // Start watching the entire document body for any changes
+    observer.observe(body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      attributeFilter: ["class", "style", "id"]
+    });
+
+    // 3. The anti-debugging nightmare trap (optional, but requested)
+    // This constantly triggers breakpoints if DevTools are open
+    setInterval(() => {
+      // eslint-disable-next-line
+      debugger;
+    }, 100);
+  }
+</script>

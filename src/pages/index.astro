@@ -4,6 +4,7 @@ import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ProductCarousel from "../components/ProductCarousel.astro";
+import ConstructionPopup from "../components/ConstructionPopup.astro";
 ---
 
 <html lang="es" class="scroll-smooth">
@@ -23,7 +24,10 @@ import ProductCarousel from "../components/ProductCarousel.astro";
       rel="stylesheet"
     />
   </head>
-  <body class="bg-white text-gray-800 font-body antialiased">
+  <body class="bg-white text-gray-800 font-body antialiased overflow-hidden">
+    <!-- Popups -->
+    <ConstructionPopup />
+
     <!-- ==================== NAVBAR ==================== -->
     <Navbar />
 
