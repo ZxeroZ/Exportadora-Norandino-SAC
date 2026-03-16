@@ -1,172 +1,226 @@
 ---
 // src/pages/index.astro
-import '../styles/global.css';
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import ProductCarousel from "../components/ProductCarousel.astro";
 ---
 
 <html lang="es" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Exportadora Norandino S.A.C. | Calidad Agrícola Peruana para el Mundo</title>
-    <meta name="description" content="Empresa peruana dedicada a la exportación de cebolla, ajo y jengibre fresco con los más altos estándares de calidad e inocuidad." />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <title>Exportadora Norandino S.A.C.</title>
+    <meta
+      name="description"
+      content="Empresa peruana dedicada a la exportación de cebolla, ajo y jengibre fresco con los más altos estándares de calidad e inocuidad."
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+      rel="stylesheet"
+    />
   </head>
   <body class="bg-white text-gray-800 font-body antialiased">
-
     <!-- ==================== NAVBAR ==================== -->
-    <nav id="main-nav" class="nav-glass shadow-sm fixed w-full z-50 top-0 transition-all duration-300">
-      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <!-- Logo -->
-        <a href="#" class="flex items-center gap-3 group">
-          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-lg shadow-lg group-hover:scale-110 transition-transform">N</div>
-          <div>
-            <span class="font-heading font-bold text-xl text-brand-800 tracking-tight">NORANDINO</span>
-            <span class="block text-[10px] text-brand-600 font-semibold tracking-[0.2em] -mt-1">S.A.C.</span>
-          </div>
-        </a>
-        <!-- Desktop Nav -->
-        <div class="hidden md:flex items-center gap-8 text-sm font-semibold text-gray-700">
-          <a href="#nosotros" class="hover:text-brand-600 transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-brand-500 after:transition-all">Nosotros</a>
-          <a href="#productos" class="hover:text-brand-600 transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-brand-500 after:transition-all">Productos</a>
-          <a href="#calidad" class="hover:text-brand-600 transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-brand-500 after:transition-all">Calidad</a>
-          <a href="#galeria" class="hover:text-brand-600 transition-colors relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-brand-500 after:transition-all">Galería</a>
-          <a href="#contacto" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25">Contáctanos</a>
-        </div>
-        <!-- Mobile Hamburger -->
-        <button id="mobile-toggle" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menú">
-          <span class="w-6 h-0.5 bg-gray-700 rounded transition-all"></span>
-          <span class="w-6 h-0.5 bg-gray-700 rounded transition-all"></span>
-          <span class="w-4 h-0.5 bg-gray-700 rounded transition-all"></span>
-        </button>
-      </div>
-      <!-- Mobile Menu -->
-      <div id="mobile-menu" class="hidden md:hidden bg-white border-t px-6 pb-4">
-        <a href="#nosotros" class="block py-3 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-100">Nosotros</a>
-        <a href="#productos" class="block py-3 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-100">Productos</a>
-        <a href="#calidad" class="block py-3 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-100">Calidad</a>
-        <a href="#galeria" class="block py-3 text-gray-700 hover:text-brand-600 font-medium border-b border-gray-100">Galería</a>
-        <a href="#contacto" class="block py-3 text-brand-600 font-bold">Contáctanos</a>
-      </div>
-    </nav>
+    <Navbar />
 
-    <!-- ==================== HERO ==================== -->
-    <section class="relative min-h-screen flex items-center overflow-hidden">
-      <!-- Background Image -->
-      <div class="absolute inset-0">
-        <img
-          src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=1920&q=80"
-          alt="Campo de cebollas"
-          class="w-full h-full object-cover"
-        />
-        <div class="hero-overlay absolute inset-0"></div>
-      </div>
-      <!-- Content -->
-      <div class="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
-        <div class="max-w-3xl">
-          <div class="animate-fade-up">
-            <span class="inline-block bg-white/15 backdrop-blur-sm text-white text-sm font-semibold px-4 py-2 rounded-full mb-6 border border-white/20 flex items-center gap-2 w-fit">
-              <span class="material-symbols-rounded text-lg">eco</span> Exportación de productos agrícolas peruanos
-            </span>
-          </div>
-          <h1 class="animate-fade-up delay-100 font-heading text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-            Exportadora<br/>
-            <span class="text-accent-400">Norandino</span> S.A.C.
-          </h1>
-          <p class="animate-fade-up delay-200 text-xl md:text-2xl text-white/90 font-light italic mb-10 max-w-xl">
-            "Calidad Agrícola Peruana para el Mundo"
-          </p>
-          <div class="animate-fade-up delay-300 flex flex-wrap gap-4">
-            <a href="#contacto" class="bg-accent-500 hover:bg-accent-400 text-brand-950 font-bold py-4 px-8 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-accent-500/30 hover:-translate-y-1">
-              Cotizar Ahora
-            </a>
-            <a href="#nosotros" class="border-2 border-white/40 hover:border-white text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-white/10">
-              Conócenos →
-            </a>
+    <section class="pb-8 px-6 bg-white overflow-hidden">
+      <div
+        class="max-w-7xl mx-auto relative rounded-[2.5rem] overflow-hidden h-[calc(100vh-140px)] min-h-[500px] flex items-center"
+      >
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-[#06140b]">
+          <img
+            src="/img1.jpg"
+            alt="Campo de cebollas"
+            class="w-full h-full object-cover opacity-100"
+          />
+          <!-- Degradado de negro/verde oscuro a transparente -->
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent"
+          >
           </div>
         </div>
-      </div>
-      <!-- Bottom wave -->
-      <div class="absolute bottom-0 left-0 w-full">
-        <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full">
-          <path d="M0 50L48 45C96 40 192 30 288 28C384 26 480 32 576 40C672 48 768 58 864 55C960 52 1056 36 1152 30C1248 24 1344 28 1392 30L1440 32V100H0V50Z" fill="white"/>
-        </svg>
-      </div>
-    </section>
+        <!-- Content -->
+        <div class="relative z-10 p-8 md:p-12 lg:p-16 w-full">
+          <div class="max-w-xl">
+            <div class="animate-fade-up">
+              <span
+                class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-sm text-white text-[10px] md:text-xs font-semibold px-3 py-1.5 rounded-full mb-3 md:mb-4 border border-white/20 w-fit"
+              >
+                <span
+                  class="material-symbols-rounded text-sm md:text-base leading-none"
+                  >eco</span
+                >
+                <span class="leading-none pt-[1px]"
+                  >Productos Agrícolas Peruanos</span
+                >
+              </span>
+            </div>
+            <h1
+              class="animate-fade-up delay-100 font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4"
+            >
+              Calidad Agrícola Para El Mundo
+            </h1>
+            <p
+              class="animate-fade-up delay-200 text-base md:text-md text-white/90 font-light mb-6 max-w-lg"
+            >
+              Nos enfocamos en ofrecer productos agrícolas de calidad con
+              procesos confiables y eficientes.
+            </p>
+            <div class="animate-fade-up delay-300 flex flex-wrap gap-3">
+              <a
+                href="https://wa.me/51999999999"
+                target="_blank"
+                rel="noopener"
+                class="bg-brand-primary hover:bg-brand-primary/90 text-white font-bold py-2.5 px-6 rounded-full transition-all duration-300 hover:shadow-xl hover:shadow-brand-primary/30 hover:-translate-y-1 flex items-center gap-2 text-sm"
+              >
+                Más información <span class="material-symbols-rounded text-base"
+                  >arrow_outward</span
+                >
+              </a>
+            </div>
 
-    <!-- ==================== STATS BAR ==================== -->
-    <section class="py-16 px-6 bg-white">
-      <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div class="flex items-center justify-center mb-2">
-              <span class="material-symbols-rounded text-brand-500 text-3xl mr-2">public</span>
-              <span class="font-heading text-4xl font-black text-brand-800">2+</span>
+            <!-- Floating Cards -->
+            <div
+              class="animate-fade-up delay-400 flex flex-wrap items-center gap-3 mt-8 md:mt-16"
+            >
+              <!-- Dark Card -->
+              <div
+                class="bg-[#2D333F]/90 backdrop-blur-md rounded-2xl p-3 md:p-4 flex items-center gap-3 border border-white/10 shadow-2xl w-[220px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-brand-secondary/20 flex flex-shrink-0 items-center justify-center"
+                >
+                  <div
+                    class="w-4 h-4 rounded-full bg-brand-secondary blur-[2px]"
+                  >
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="flex items-center gap-1 text-white font-bold text-base mb-0.5"
+                  >
+                    <span class="material-symbols-rounded text-xs text-gray-400"
+                      >verified</span
+                    > SENASA
+                  </div>
+                  <p class="text-[10px] text-gray-300 leading-tight">
+                    Certificación y Empaque
+                  </p>
+                </div>
+              </div>
+
+              <!-- Light Card -->
+              <div
+                class="bg-white/95 backdrop-blur-md rounded-2xl p-3 md:p-4 flex items-center gap-3 shadow-2xl w-[220px]"
+              >
+                <div
+                  class="w-10 h-10 rounded-full bg-brand-tertiary flex flex-shrink-0 items-center justify-center text-white shadow-inner"
+                >
+                  <span class="material-symbols-rounded text-[20px]">star</span>
+                </div>
+                <div>
+                  <div
+                    class="font-bold text-gray-800 text-[12px] leading-tight mb-0.5"
+                  >
+                    Control de Calidad
+                  </div>
+                  <p class="text-[9px] text-gray-500 leading-tight">
+                    Procesos de selección y verificación
+                  </p>
+                </div>
+              </div>
             </div>
-            <p class="text-gray-500 text-sm font-medium">Países de exportación</p>
-          </div>
-          <div class="text-center">
-            <div class="flex items-center justify-center mb-2">
-              <span class="material-symbols-rounded text-brand-500 text-3xl mr-2">inventory</span>
-              <span class="font-heading text-4xl font-black text-brand-800">3</span>
-            </div>
-            <p class="text-gray-500 text-sm font-medium">Productos de exportación</p>
-          </div>
-          <div class="text-center">
-            <div class="flex items-center justify-center mb-2">
-              <span class="material-symbols-rounded text-brand-500 text-3xl mr-2">verified</span>
-              <span class="font-heading text-4xl font-black text-brand-800">100%</span>
-            </div>
-            <p class="text-gray-500 text-sm font-medium">Trazabilidad garantizada</p>
-          </div>
-          <div class="text-center">
-            <div class="flex items-center justify-center mb-2">
-              <span class="material-symbols-rounded text-brand-500 text-3xl mr-2">eco</span>
-              <span class="font-heading text-4xl font-black text-brand-800">SENASA</span>
-            </div>
-            <p class="text-gray-500 text-sm font-medium">Certificación fitosanitaria</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ==================== QUIÉNES SOMOS ==================== -->
-    <section id="nosotros" class="py-24 px-6 relative overflow-hidden">
+    <section
+      id="nosotros"
+      class="pt-12 md:pt-16 pb-4 md:pb-8 px-6 relative overflow-hidden"
+    >
       <div class="max-w-7xl mx-auto">
         <!-- Section Header -->
         <div class="text-center mb-16">
-          <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">Conócenos</span>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-900 mt-2 mb-4">¿Quiénes Somos?</h2>
+          <span
+            class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
+            >Conócenos</span
+          >
+          <h2
+            class="font-heading text-4xl md:text-5xl font-bold text-brand-primary mt-2 mb-4"
+          >
+            ¿Quiénes Somos?
+          </h2>
           <div class="section-divider mx-auto"></div>
         </div>
         <!-- Grid -->
         <div class="grid lg:grid-cols-3 gap-8">
           <!-- About Card -->
-          <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-lift">
-            <div class="w-14 h-14 rounded-xl bg-brand-50 flex items-center justify-center mb-6"><span class="material-symbols-rounded text-3xl text-brand-600">apartment</span></div>
-            <h3 class="font-heading text-2xl font-bold text-brand-800 mb-4">Nuestra Empresa</h3>
+          <div
+            class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 card-lift"
+          >
+            <div
+              class="w-14 h-14 rounded-xl bg-gray-50 flex items-center justify-center mb-6"
+            >
+              <span
+                class="material-symbols-rounded text-3xl text-brand-secondary"
+                >apartment</span
+              >
+            </div>
+            <h3 class="font-heading text-2xl font-bold text-brand-primary mb-4">
+              Nuestra Empresa
+            </h3>
             <p class="text-gray-600 leading-relaxed">
-              Exportadora Norandino S.A.C. es una empresa peruana dedicada al procesamiento, selección, empaque y exportación de <strong>cebolla (roja y amarilla), ajo y jengibre fresco</strong>. Nuestra operación se basa en estrictos estándares de calidad e inocuidad, garantizando productos confiables para mercados internacionales.
+              Exportadora Norandino S.A.C. es una empresa peruana dedicada al
+              procesamiento, selección, empaque y exportación de productos
+              agrícolas como <strong
+                >cebolla (roja y amarilla), ajo y jengibre fresco</strong
+              >. Trabajamos bajo estrictos estándares de calidad e inocuidad
+              para ofrecer productos confiables en mercados internacionales.
             </p>
             <div class="section-divider mt-6"></div>
           </div>
           <!-- Misión -->
           <div class="green-card card-lift relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/5 -mr-10 -mt-10"></div>
-            <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80" alt="Cebollas en cajas" class="w-full h-48 object-cover rounded-xl mb-6" />
+            <div
+              class="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/5 -mr-10 -mt-10"
+            >
+            </div>
+            <img
+              src="img2.jpg"
+              alt="Cebollas en cajas"
+              class="w-full h-48 object-cover rounded-xl mb-6"
+            />
             <h3 class="font-heading text-2xl font-bold mb-4">MISIÓN</h3>
             <p class="text-white/90 leading-relaxed text-sm">
-              Garantizar a nuestros clientes productos frescos de cebolla, ajo y jengibre que cumplen estrictamente con los estándares de calidad, inocuidad y requisitos sanitarios internacionales, operando con personal calificado, procesos eficientes y un firme compromiso con la mejora continua y la responsabilidad ambiental.
+              Garantizar a nuestros clientes productos frescos de cebolla, ajo y
+              jengibre que cumplen estándares internacionales de calidad e
+              inocuidad, mediante procesos eficientes y un compromiso constante
+              con la mejora continua.
             </p>
           </div>
           <!-- Visión -->
-          <div class="green-card card-lift relative overflow-hidden">
-            <div class="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/5 -mr-10 -mt-10"></div>
-            <img src="https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2?w=600&q=80" alt="Exportación agrícola" class="w-full h-48 object-cover rounded-xl mb-6" />
+          <div class="blue-card card-lift relative overflow-hidden">
+            <div
+              class="absolute top-0 right-0 w-32 h-32 rounded-full bg-white/5 -mr-10 -mt-10"
+            >
+            </div>
+            <img
+              src="img3.jpg"
+              alt="Exportación agrícola"
+              class="w-full h-48 object-cover rounded-xl mb-6"
+            />
             <h3 class="font-heading text-2xl font-bold mb-4">VISIÓN</h3>
             <p class="text-white/90 leading-relaxed text-sm">
-              Ser una empresa exportadora líder y confiable en el mercado internacional, reconocida por la excelencia de nuestros productos y por relaciones comerciales sostenibles.
+              Ser una empresa exportadora líder y confiable en el mercado
+              internacional, reconocida por la excelencia de nuestros productos
+              y por relaciones comerciales sostenibles.
             </p>
           </div>
         </div>
@@ -174,368 +228,299 @@ import '../styles/global.css';
     </section>
 
     <!-- ==================== PRODUCTOS ==================== -->
-    <section id="productos" class="py-24 px-6 bg-gradient-to-b from-brand-50/50 to-white relative overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-6">
-          <p class="text-brand-600 italic font-medium text-lg">"Calidad Agrícola Peruana Para el Mundo"</p>
-        </div>
-        <div class="text-center mb-16">
-          <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">Catálogo</span>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-900 mt-2 mb-4">Nuestros Productos</h2>
-          <div class="section-divider mx-auto mb-4"></div>
-          <p class="text-gray-600 max-w-md mx-auto">Cebolla fresca (roja y amarilla) · Ajo fresco · Jengibre fresco</p>
-        </div>
-
-        <!-- CEBOLLA FRESCA - Full Detail Section -->
-        <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden mb-12">
-          <div class="bg-gradient-to-r from-brand-700 to-brand-600 px-8 py-5">
-            <h3 class="font-heading text-2xl font-bold text-white flex items-center gap-3"><span class="material-symbols-rounded">grass</span> Cebolla Fresca</h3>
-          </div>
-          <div class="p-8">
-            <div class="grid md:grid-cols-2 gap-8 mb-8">
-              <!-- Calibres -->
-              <div>
-                <h4 class="font-bold text-lg text-brand-800 mb-4 flex items-center gap-2">
-                  <span class="icon-circle w-8 h-8 text-sm"><span class="material-symbols-rounded text-base">straighten</span></span> CALIBRES
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  <span class="calibre-badge">Boiler: 40–50 mm</span>
-                  <span class="calibre-badge">Prepack: 50–60 mm</span>
-                  <span class="calibre-badge">Medium: 60–80 mm</span>
-                  <span class="calibre-badge">Jumbo: 80–100 mm</span>
-                  <span class="calibre-badge">Colossal: 100 mm +</span>
-                </div>
-              </div>
-              <!-- Empaque -->
-              <div>
-                <h4 class="font-bold text-lg text-brand-800 mb-4 flex items-center gap-2">
-                  <span class="icon-circle w-8 h-8 text-sm"><span class="material-symbols-rounded text-base">inventory_2</span></span> EMPAQUE
-                </h4>
-                <ul class="space-y-2 text-gray-600 text-sm">
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Mallas y sacos según requerimiento del cliente</li>
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Capacidades habituales: 20, 25 y 50 kg</li>
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Empaques nuevos y aptos para exportación</li>
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Etiquetado personalizable (marca del cliente, origen y lote)</li>
-                </ul>
-              </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-8 pt-8 border-t border-gray-100">
-              <!-- Presentación -->
-              <div>
-                <h4 class="font-bold text-lg text-brand-800 mb-4 flex items-center gap-2">
-                  <span class="icon-circle w-8 h-8 text-sm"><span class="material-symbols-rounded text-base">verified</span></span> PRESENTACIÓN DE PRODUCTO
-                </h4>
-                <ul class="space-y-2 text-gray-600 text-sm">
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Cebolla seleccionada manualmente</li>
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Calibres uniformes según especificación acordada</li>
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Paletización estándar para exportación</li>
-                </ul>
-              </div>
-              <!-- Tipo de Exportación -->
-              <div>
-                <h4 class="font-bold text-lg text-brand-800 mb-4 flex items-center gap-2">
-                  <span class="icon-circle w-8 h-8 text-sm"><span class="material-symbols-rounded text-base">local_shipping</span></span> TIPO DE EXPORTACIÓN
-                </h4>
-                <ul class="space-y-2 text-gray-600 text-sm">
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Contenedores refrigerados</li>
-                  <li class="flex items-start gap-2"><span class="text-brand-500 mt-1">✓</span> Condiciones comerciales: FOB / CIF, entre otros</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Ajo & Jengibre Cards -->
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-lift">
-            <img src="https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?w=600&q=80" alt="Ajo fresco" class="w-full h-56 object-cover" />
-            <div class="p-8">
-              <h4 class="font-heading text-2xl font-bold text-brand-800 mb-3 flex items-center gap-2"><span class="material-symbols-rounded text-brand-600">spa</span> Ajo Fresco</h4>
-              <p class="text-gray-600 leading-relaxed">
-                Calidad de exportación, procesado bajo estrictos estándares de inocuidad. Selección manual y calibres uniformes para satisfacer los requerimientos del mercado internacional.
-              </p>
-            </div>
-          </div>
-          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden card-lift">
-            <img src="https://images.unsplash.com/photo-1615485500710-aa71300612aa?w=600&q=80" alt="Jengibre fresco" class="w-full h-56 object-cover" />
-            <div class="p-8">
-              <h4 class="font-heading text-2xl font-bold text-brand-800 mb-3 flex items-center gap-2"><span class="material-symbols-rounded text-brand-600">nutrition</span> Jengibre Fresco</h4>
-              <p class="text-gray-600 leading-relaxed">
-                Seleccionado meticulosamente para garantizar la máxima frescura y sabor. Exportado con trazabilidad completa y cumplimiento de todos los requisitos sanitarios.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== CALIDAD ==================== -->
-    <section id="calidad" class="py-24 px-6 relative overflow-hidden">
+    <section
+      id="productos"
+      class="pt-8 md:pt-12 pb-12 md:pb-16 px-6 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden"
+    >
       <div class="max-w-7xl mx-auto">
         <div class="text-center mb-16">
-          <span class="text-brand-600 font-semibold text-sm tracking-widest uppercase">Excelencia</span>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-900 mt-2 mb-4">Proceso y Control de Calidad</h2>
+          <span
+            class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
+            >Catálogo</span
+          >
+          <h2
+            class="font-heading text-4xl md:text-5xl font-bold text-brand-primary mt-2 mb-4"
+          >
+            Nuestros Productos
+          </h2>
           <div class="section-divider mx-auto"></div>
         </div>
 
-        <!-- Quality Process Description -->
-        <div class="bg-gradient-to-br from-brand-800 to-brand-900 rounded-3xl p-10 mb-12 text-white relative overflow-hidden">
-          <div class="flex items-start gap-6 flex-col md:flex-row">
-            <div class="icon-circle bg-white/20 flex-shrink-0"><span class="material-symbols-rounded text-3xl">workspace_premium</span></div>
-            <div>
-              <h3 class="font-heading text-2xl font-bold mb-4">Nuestro Proceso</h3>
-              <p class="text-white/85 leading-relaxed text-lg">
-                Nuestro proceso integra selección manual, clasificación por calibres, limpieza, empaque y verificación final en planta. Todos los envíos cuentan con trazabilidad, inspección previa y certificación fitosanitaria emitida por el <strong>Servicio Nacional de Sanidad Agraria – SENASA</strong>.
-              </p>
-            </div>
+        <div
+          class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[400px] max-w-6xl mx-auto mb-16"
+        >
+          <div
+            class="col-span-2 md:col-span-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img5.jpg"
+              alt="Instalaciones 1"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
           </div>
-          <!-- Process Steps -->
-          <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10 pt-8 border-t border-white/10">
-            <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-rounded">agriculture</span></div>
-              <p class="text-sm text-white/80 font-medium">Recepción</p>
-            </div>
-            <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-rounded">pan_tool</span></div>
-              <p class="text-sm text-white/80 font-medium">Selección Manual</p>
-            </div>
-            <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-rounded">straighten</span></div>
-              <p class="text-sm text-white/80 font-medium">Clasificación</p>
-            </div>
-            <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-rounded">inventory_2</span></div>
-              <p class="text-sm text-white/80 font-medium">Empaque</p>
-            </div>
-            <div class="text-center">
-              <div class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"><span class="material-symbols-rounded">local_shipping</span></div>
-              <p class="text-sm text-white/80 font-medium">Exportación</p>
-            </div>
+          <div
+            class="col-span-1 md:col-start-2 md:col-end-4 md:row-start-1 md:row-end-2 h-[160px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img4.jpg"
+              alt="Instalaciones 2"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
           </div>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-8">
-          <!-- Ventajas Competitivas -->
-          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 card-lift">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="icon-circle"><span class="material-symbols-rounded">trending_up</span></div>
-              <h3 class="font-heading text-xl font-bold text-brand-800">Ventajas Competitivas</h3>
-            </div>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-2 h-2 rounded-full bg-brand-500 mt-2 flex-shrink-0"></span>
-                Producto uniforme y selección manual
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-2 h-2 rounded-full bg-brand-500 mt-2 flex-shrink-0"></span>
-                Experiencia exportando a Colombia y República Dominicana
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-2 h-2 rounded-full bg-brand-500 mt-2 flex-shrink-0"></span>
-                Flexibilidad para adaptarnos a los requisitos del cliente
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-2 h-2 rounded-full bg-brand-500 mt-2 flex-shrink-0"></span>
-                Precios competitivos y abastecimiento continuo
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-2 h-2 rounded-full bg-brand-500 mt-2 flex-shrink-0"></span>
-                Planta propia ubicada en Chiclayo, zona agrícola estratégica
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-2 h-2 rounded-full bg-brand-500 mt-2 flex-shrink-0"></span>
-                Comunicación directa y eficiente durante todo el proceso
-              </li>
-            </ul>
+          <div
+            class="col-span-1 md:col-start-2 md:col-end-4 md:row-start-2 md:row-end-3 h-[160px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img7.jpg"
+              alt="Instalaciones 3"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
           </div>
-
-          <!-- Certificaciones -->
-          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 card-lift">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="icon-circle"><span class="material-symbols-rounded">verified_user</span></div>
-              <h3 class="font-heading text-xl font-bold text-brand-800">Certificaciones</h3>
-            </div>
-            <ul class="space-y-3">
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 flex-shrink-0"><span class="material-symbols-rounded text-sm">check</span></span>
-                Certificado fitosanitario SENASA N° 000170-MINAGRI-SENASA-LAMBAYEQUE
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 flex-shrink-0"><span class="material-symbols-rounded text-sm">check</span></span>
-                Código SENASA planta empacadora: N° 004-00058PE
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xs flex-shrink-0">✓</span>
-                Certificado de origen (cámara de comercio)
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xs flex-shrink-0">✓</span>
-                Trazabilidad garantizada
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xs flex-shrink-0">✓</span>
-                Buenas prácticas de manipulación
-              </li>
-              <li class="flex items-start gap-3 text-gray-600">
-                <span class="w-6 h-6 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 text-xs flex-shrink-0">✓</span>
-                Cumplimiento de requisitos sanitarios y legales del país de origen
-              </li>
-            </ul>
+          <div
+            class="col-span-2 md:col-span-1 md:col-start-4 md:col-end-5 md:row-start-1 md:row-end-3 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img6.jpg"
+              alt="Instalaciones 4"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
           </div>
         </div>
+        <!-- PRODUCT CAROUSEL -->
+        <ProductCarousel />
       </div>
     </section>
+  </body>
 
-    <!-- ==================== CTA BANNER ==================== -->
-    <section class="py-20 px-6 bg-gradient-to-r from-brand-600 to-brand-700 relative overflow-hidden">
-      <div class="max-w-4xl mx-auto text-center text-white">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">¿Listo para importar productos frescos del Perú?</h2>
-        <p class="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-          Ofrecemos precios competitivos, abastecimiento continuo y la flexibilidad de adaptarnos a sus requerimientos específicos.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <a href="#contacto" class="bg-white text-brand-700 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl flex items-center gap-2">
-            <span class="material-symbols-rounded">request_quote</span> Solicitar Cotización
-          </a>
-          <a href="https://wa.link/28wvxq" target="_blank" rel="noopener" class="border-2 border-white/40 hover:border-white text-white font-semibold py-4 px-8 rounded-full transition-all duration-300 hover:bg-white/10 flex items-center gap-2">
-            <span class="material-symbols-rounded">chat</span> WhatsApp Directo
-          </a>
-        </div>
+  <!-- ==================== CALIDAD ==================== -->
+  <section
+    id="calidad"
+    class="pt-8 md:pt-12 pb-12 md:pb-16 px-6 relative overflow-hidden"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <span
+          class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
+          >Excelencia</span
+        >
+        <h2
+          class="font-heading text-4xl md:text-5xl font-bold text-brand-primary mt-2 mb-4"
+        >
+          Proceso y Control de Calidad
+        </h2>
+        <div class="section-divider mx-auto"></div>
       </div>
-    </section>
 
-    <!-- ==================== GALERÍA ==================== -->
-    <section id="galeria" class="py-24 px-6 bg-brand-950 relative overflow-hidden">
-      <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-6">
-          <p class="text-brand-300 italic font-medium text-lg">"Exportamos productos agrícolas con calidad, frescura y compromiso, llevando el sabor del Perú al mundo."</p>
-        </div>
-        <div class="text-center mb-16">
-          <span class="text-brand-400 font-semibold text-sm tracking-widest uppercase">Nuestras Instalaciones</span>
-          <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mt-2 mb-4">Galería</h2>
-          <div class="section-divider mx-auto"></div>
-        </div>
-        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="gallery-item aspect-square">
-            <img src="https://images.unsplash.com/photo-1586201375761-83865001e6e1?w=600&q=80" alt="Almacén frigorífico" loading="lazy" />
+      <!-- Quality Process Description -->
+      <div
+        class="bg-gradient-to-br from-brand-primary to-brand-primary rounded-3xl p-10 mb-12 text-white relative overflow-hidden"
+      >
+        <div class="flex items-start gap-6 flex-col md:flex-row">
+          <div class="icon-circle bg-white/20 flex-shrink-0">
+            <span class="material-symbols-rounded text-3xl"
+              >workspace_premium</span
+            >
           </div>
-          <div class="gallery-item aspect-square">
-            <img src="https://images.unsplash.com/photo-1595855759920-86582396756a?w=600&q=80" alt="Selección de cebollas" loading="lazy" />
-          </div>
-          <div class="gallery-item aspect-square">
-            <img src="https://images.unsplash.com/photo-1508747703725-719571f5c191?w=600&q=80" alt="Cebollas rojas frescas" loading="lazy" />
-          </div>
-          <div class="gallery-item aspect-square">
-            <img src="https://images.unsplash.com/photo-1592924357228-91a4daadcfea?w=600&q=80" alt="Transporte de exportación" loading="lazy" />
-          </div>
-          <div class="gallery-item aspect-square">
-            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=600&q=80" alt="Proceso de empaque" loading="lazy" />
-          </div>
-          <div class="gallery-item aspect-square">
-            <img src="https://images.unsplash.com/photo-1540148426945-6cf22a6b2571?w=600&q=80" alt="Productos listos para exportar" loading="lazy" />
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ==================== FOOTER / CONTACTO ==================== -->
-    <footer id="contacto" class="bg-gray-900 text-white relative overflow-hidden">
-      <!-- Top green accent -->
-      <div class="h-1 bg-gradient-to-r from-brand-500 via-accent-500 to-brand-500"></div>
-      <div class="max-w-7xl mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-3 gap-12">
-          <!-- Brand -->
           <div>
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-500 to-brand-700 flex items-center justify-center text-white font-bold text-xl shadow-lg">N</div>
-              <div>
-                <span class="font-heading font-bold text-2xl tracking-tight">NORANDINO</span>
-                <span class="block text-xs text-gray-400 tracking-[0.2em] -mt-1">S.A.C.</span>
-              </div>
-            </div>
-            <p class="text-gray-400 text-sm leading-relaxed">
-              Exportadora Norandino S.A.C. — Calidad agrícola peruana para el mundo. Procesamiento, selección y exportación de productos frescos.
+            <h3 class="font-heading text-2xl font-bold mb-4">
+              Nuestro Proceso
+            </h3>
+            <p class="text-white/85 leading-relaxed text-lg">
+              Nuestro proceso integra selección manual, clasificación por
+              calibres, limpieza, empaque y verificación final en planta. Todos
+              los envíos cuentan con trazabilidad, inspección previa y
+              certificación fitosanitaria emitida por el <strong
+                >Servicio Nacional de Sanidad Agraria – SENASA</strong
+              >.
             </p>
           </div>
-          <!-- Contact Info -->
-          <div>
-            <h3 class="text-lg font-bold mb-6 text-white">Contacto</h3>
-            <div class="space-y-4 text-sm text-gray-300">
-              <p class="flex items-start gap-3">
-                <span class="material-symbols-rounded text-brand-400 text-lg">location_on</span>
-                Av. Despensa N° 1550 - José Leonardo Ortiz, Lambayeque – Perú
-              </p>
-              <p class="flex items-center gap-3">
-                <span class="material-symbols-rounded text-brand-400 text-lg">call</span>
-                922 398 538 / 973 845 374
-              </p>
-              <p class="flex items-center gap-3">
-                <span class="material-symbols-rounded text-brand-400 text-lg">mail</span>
-                exportadoranorandino@gmail.com
-              </p>
-              <p class="flex items-center gap-3">
-                <span class="material-symbols-rounded text-brand-400 text-lg">mail</span>
-                info.exponorandino@gmail.com
-              </p>
-            </div>
-          </div>
-          <!-- CTA -->
-          <div class="flex flex-col justify-center items-center md:items-end">
-            <a
-              href="https://wa.link/28wvxq"
-              target="_blank"
-              rel="noopener"
-              class="wa-pulse bg-brand-500 hover:bg-brand-400 text-white font-bold py-4 px-8 rounded-2xl flex items-center gap-3 transition-all duration-300 hover:shadow-xl hover:shadow-brand-500/25 text-lg"
-            >
-              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-              WhatsApp
-            </a>
-            <p class="text-gray-500 text-xs mt-4">Respuesta inmediata</p>
-          </div>
         </div>
-        <!-- Bottom bar -->
-        <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm">
-          &copy; 2026 Exportadora Norandino S.A.C. Todos los derechos reservados.
+        <!-- Process Steps -->
+        <div
+          class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10 pt-8 border-t border-white/10"
+        >
+          <div class="text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="material-symbols-rounded">agriculture</span>
+            </div>
+            <p class="text-sm text-white/80 font-medium">Recepción</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="material-symbols-rounded">pan_tool</span>
+            </div>
+            <p class="text-sm text-white/80 font-medium">Selección Manual</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="material-symbols-rounded">straighten</span>
+            </div>
+            <p class="text-sm text-white/80 font-medium">Clasificación</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="material-symbols-rounded">inventory_2</span>
+            </div>
+            <p class="text-sm text-white/80 font-medium">Empaque</p>
+          </div>
+          <div class="text-center">
+            <div
+              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
+            >
+              <span class="material-symbols-rounded">local_shipping</span>
+            </div>
+            <p class="text-sm text-white/80 font-medium">Exportación</p>
+          </div>
         </div>
       </div>
-    </footer>
 
-    <!-- ==================== SCRIPTS ==================== -->
-    <script>
-      // Mobile menu toggle
-      const toggle = document.getElementById('mobile-toggle');
-      const menu = document.getElementById('mobile-menu');
-      toggle?.addEventListener('click', () => {
-        menu?.classList.toggle('hidden');
-      });
-      // Close mobile menu on link click
-      menu?.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => menu?.classList.add('hidden'));
-      });
-      // Navbar shrink on scroll
-      window.addEventListener('scroll', () => {
-        const nav = document.getElementById('main-nav');
-        if (window.scrollY > 50) {
-          nav?.classList.add('shadow-lg');
-          nav?.classList.remove('shadow-sm');
-        } else {
-          nav?.classList.remove('shadow-lg');
-          nav?.classList.add('shadow-sm');
-        }
-      });
-      // Intersection Observer for scroll animations
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Ventajas Competitivas -->
+        <div
+          class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 card-lift"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <div class="icon-circle">
+              <span class="material-symbols-rounded">trending_up</span>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-brand-primary">
+              Ventajas Competitivas
+            </h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
+              ></span>
+              Producto uniforme y selección manual
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
+              ></span>
+              Experiencia exportando a Colombia y República Dominicana
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
+              ></span>
+              Flexibilidad para adaptarnos a los requisitos del cliente
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
+              ></span>
+              Precios competitivos y abastecimiento continuo
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
+              ></span>
+              Planta propia ubicada en Chiclayo, zona agrícola estratégica
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
+              ></span>
+              Comunicación directa y eficiente durante todo el proceso
+            </li>
+          </ul>
+        </div>
+
+        <!-- Certificaciones -->
+        <div
+          class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 card-lift"
+        >
+          <div class="flex items-center gap-4 mb-6">
+            <div class="icon-circle">
+              <span class="material-symbols-rounded">verified_user</span>
+            </div>
+            <h3 class="font-heading text-xl font-bold text-brand-primary">
+              Certificaciones
+            </h3>
+          </div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary flex-shrink-0"
+                ><span class="material-symbols-rounded text-sm">check</span
+                ></span
+              >
+              Certificado fitosanitario SENASA N° 000170-MINAGRI-SENASA-LAMBAYEQUE
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary flex-shrink-0"
+                ><span class="material-symbols-rounded text-sm">check</span
+                ></span
+              >
+              Código SENASA planta empacadora: N° 004-00058PE
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
+                >✓</span
+              >
+              Certificado de origen (cámara de comercio)
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
+                >✓</span
+              >
+              Trazabilidad garantizada
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
+                >✓</span
+              >
+              Buenas prácticas de manipulación
+            </li>
+            <li class="flex items-start gap-3 text-gray-600">
+              <span
+                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
+                >✓</span
+              >
+              Cumplimiento de requisitos sanitarios y legales del país de origen
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER / CONTACTO ==================== -->
+  <Footer />
+
+  <!-- ==================== SCRIPTS ==================== -->
+  <script>
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-up');
+            entry.target.classList.add("animate-fade-up");
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('section > div').forEach(el => {
-        observer.observe(el);
-      });
-    </script>
-
-  </body>
+      },
+      { threshold: 0.1 },
+    );
+    document.querySelectorAll("section > div").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
 </html>

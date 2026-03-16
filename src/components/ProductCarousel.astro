@@ -1,0 +1,258 @@
+---
+// src/components/ProductCarousel.astro
+
+const cards = [
+  {
+    title: "CALIBRES",
+    icon: "straighten",
+    items: [
+      "Boiler: 40–50 mm",
+      "Prepack: 50–60 mm",
+      "Medium: 60–80 mm",
+      "Jumbo: 80–100 mm",
+      "Colossal: 100 mm +",
+    ],
+  },
+  {
+    title: "EMPAQUE",
+    icon: "inventory_2",
+    items: [
+      "Mallas y sacos según requerimiento del cliente",
+      "Capacidades habituales: 20, 25 y 50 kg",
+      "Empaques nuevos y aptos para exportación",
+      "Etiquetado personalizable (marca del cliente, origen y lote)",
+    ],
+  },
+  {
+    title: "PRESENTACIÓN DE PRODUCTO",
+    icon: "verified",
+    items: [
+      "Cebolla seleccionada manualmente",
+      "Calibres uniformes según especificación acordada",
+      "Paletización estándar para exportación",
+    ],
+  },
+  {
+    title: "TIPO / CONDICIONES",
+    icon: "local_shipping",
+    items: [
+      "Contenedores refrigerados (0-2 °C / 65-75% de humedad)",
+      "Condiciones comerciales: FOB / CIF, entre otros",
+      "Capacidad de abastecimiento mensual: 720 toneladas",
+      "Vida útil: 45–60 días bajo condiciones óptimas",
+    ],
+  },
+];
+
+// Build the full slide array: [clone last 2] + [originals] + [clone first 2]
+// This ensures there are always cards visible on BOTH sides of the centered card
+const prependClones = cards.slice(-2); // cards 2,3
+const appendClones = cards.slice(0, 2); // cards 0,1
+const allCards = [...prependClones, ...cards, ...appendClones];
+// allCards indices: [2', 3', 0, 1, 2, 3, 0', 1']
+// Real card 0 is at index 2
+const cloneOffset = prependClones.length; // 2
+const totalOriginal = cards.length; // 4
+---
+
+<div
+  class="product-carousel-container w-full pt-4 pb-0 overflow-hidden relative"
+  id="carousel-wrapper"
+  data-offset={cloneOffset}
+  data-total={totalOriginal}
+>
+  <!-- Section Title -->
+  <div class="text-center mb-10 px-6">
+    <h3
+      class="font-heading text-2xl md:text-3xl font-bold text-brand-secondary uppercase tracking-wide"
+    >
+      Características de Productos
+    </h3>
+    <p class="text-gray-600 mt-2 max-w-lg mx-auto text-sm md:text-base">
+      Manejamos los más altos estándares de calidad y calibres para nuestras
+      exportaciones.
+    </p>
+  </div>
+
+  <!-- Carousel Track -->
+  <div class="carousel-track flex" id="carousel-track">
+    {
+      allCards.map((card) => (
+        <div class="carousel-slide w-full md:w-1/3 flex-shrink-0 px-2 py-8">
+          <div class="carousel-card bg-white rounded-[32px] overflow-hidden shadow-[0_15px_50px_rgba(0,0,0,0.06)] h-full flex flex-col mx-auto max-w-[280px] border border-gray-100 transition-all duration-500">
+            <div class="p-8 flex-grow flex flex-col items-center justify-start text-center">
+              <span
+                class="material-symbols-rounded text-[50px] text-brand-secondary mb-4 font-light"
+                style="font-variation-settings: 'FILL' 0, 'wght' 200;"
+              >
+                {card.icon}
+              </span>
+              <h4 class="font-heading font-bold text-lg text-brand-primary uppercase mb-4 min-h-[50px] flex items-center">
+                {card.title}
+              </h4>
+              <ul class="text-gray-600 text-[13px] md:text-[14px] leading-relaxed font-light text-left w-full space-y-2">
+                {card.items.map((item) => (
+                  <li class="flex items-start gap-2">
+                    <span class="text-brand-secondary mt-1 flex-shrink-0 text-lg leading-none">
+                      •
+                    </span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div class="h-5 w-full color-band transition-colors duration-500 bg-brand-primary/20" />
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Pagination Dots -->
+  <div class="flex justify-center items-center gap-3 mt-6" id="carousel-dots">
+    {
+      cards.map((_, i) => (
+        <button
+          class="carousel-dot w-3 h-3 rounded-full transition-all duration-300 bg-brand-secondary/30"
+          data-index={i}
+          aria-label={`Slide ${i + 1}`}
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .carousel-track {
+    will-change: transform;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", initProductCarousel);
+  document.addEventListener("astro:page-load", initProductCarousel);
+
+  function initProductCarousel() {
+    var track = document.getElementById("carousel-track");
+    var wrapper = document.getElementById("carousel-wrapper");
+    if (!track || !wrapper) return;
+
+    var OFFSET = parseInt(wrapper.getAttribute("data-offset") || "2", 10); // 2
+    var TOTAL = parseInt(wrapper.getAttribute("data-total") || "4", 10); // 4
+    var slides = track.querySelectorAll(".carousel-slide");
+    var dots = document.querySelectorAll(".carousel-dot");
+
+    if (slides.length === 0) return;
+
+    //  current = index in the allCards array. Start at OFFSET (= real card 0)
+    var current = OFFSET;
+    var timer = 0;
+    var busy = false;
+
+    // ── Slide width ──
+    function sw() {
+      return window.innerWidth >= 768 ? 100 / 3 : 100;
+    }
+
+    // ── Move to index (with or without animation) ──
+    function moveTo(idx, anim) {
+      // On desktop center: offset by 1 slide so active sits in the middle of 3
+      var offset = window.innerWidth >= 768 ? sw() : 0;
+      var tx = -(idx * sw()) + offset;
+      track.style.transition = anim ? "transform 700ms ease-out" : "none";
+      track.style.transform = "translateX(" + tx + "%)";
+    }
+
+    // ── Highlight active card ──
+    function highlight(realIdx) {
+      slides.forEach(function (slide, i) {
+        var card = slide.querySelector(".carousel-card");
+        var band = slide.querySelector(".color-band");
+        // Map every slide's index back to its logical card index
+        // allCards = [clone(2), clone(3), 0, 1, 2, 3, clone(0), clone(1)]
+        var logicalIdx = (((i - OFFSET) % TOTAL) + TOTAL) % TOTAL;
+        var isActive = logicalIdx === realIdx;
+
+        if (!card) return;
+        card.style.transform = isActive ? "scale(1.05)" : "scale(0.9)";
+        card.style.opacity = isActive ? "1" : "0.4";
+        card.style.zIndex = isActive ? "10" : "0";
+        if (band) {
+          if (isActive) {
+            band.classList.remove("bg-brand-primary/20");
+            band.classList.add("bg-brand-secondary");
+          } else {
+            band.classList.remove("bg-brand-secondary");
+            band.classList.add("bg-brand-primary/20");
+          }
+        }
+      });
+
+      dots.forEach(function (dot, i) {
+        if (i === realIdx) {
+          dot.classList.add("bg-brand-secondary");
+          dot.classList.remove("bg-brand-secondary/30", "scale-75");
+        } else {
+          dot.classList.remove("bg-brand-secondary");
+          dot.classList.add("bg-brand-secondary/30", "scale-75");
+        }
+      });
+    }
+
+    // ── Go to a specific index ──
+    function goTo(idx, anim) {
+      if (busy) return;
+      busy = true;
+      current = idx;
+      var realIdx = (((current - OFFSET) % TOTAL) + TOTAL) % TOTAL;
+      highlight(realIdx);
+      moveTo(current, anim);
+
+      if (!anim) {
+        busy = false;
+        return;
+      }
+
+      setTimeout(function () {
+        // If we've scrolled past the originals into the appended clones,
+        // teleport back to the matching original position
+        if (current >= OFFSET + TOTAL) {
+          current = current - TOTAL;
+          moveTo(current, false);
+          void track.offsetHeight; // force reflow
+        }
+        // If we've scrolled before the originals into the prepended clones,
+        // teleport forward to the matching original position
+        else if (current < OFFSET) {
+          current = current + TOTAL;
+          moveTo(current, false);
+          void track.offsetHeight;
+        }
+        busy = false;
+      }, 720);
+    }
+
+    function next() {
+      goTo(current + 1, true);
+    }
+
+    function startAuto() {
+      clearInterval(timer);
+      timer = window.setInterval(next, 5000);
+    }
+
+    // ── Dot clicks ──
+    dots.forEach(function (dot) {
+      dot.addEventListener("click", function () {
+        var targetReal = parseInt(dot.getAttribute("data-index") || "0", 10);
+        // Always navigate within the original range
+        goTo(OFFSET + targetReal, true);
+        startAuto();
+      });
+    });
+
+    // ── Init: start at real card 0 ──
+    goTo(OFFSET, false);
+    startAuto();
+  }
+</script>

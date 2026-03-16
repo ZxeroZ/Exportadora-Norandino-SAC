@@ -1,0 +1,237 @@
+---
+// src/pages/contacto.astro
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="es" class="scroll-smooth">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="/logo.png" />
+        <title>Contacto | Exportadora Norandino S.A.C.</title>
+        <meta
+            name="description"
+            content="Comunícate con Exportadora Norandino S.A.C. para obtener información sobre nuestros productos agrícolas de exportación."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0"
+            rel="stylesheet"
+        />
+    </head>
+    <body
+        class="bg-white text-gray-800 font-body antialiased flex flex-col min-h-screen"
+    >
+        <Navbar />
+
+        <!-- Padding restored for standard flow -->
+        <main class="flex-grow pt-4 pb-16 px-6">
+            <div class="max-w-6xl mx-auto">
+                <!-- HEADER -->
+                <div class="text-center mb-12 mt-2">
+                    <span
+                        class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
+                        >Comunícate</span
+                    >
+                    <h1
+                        class="font-heading text-4xl md:text-5xl font-bold text-brand-primary mt-2 mb-4"
+                    >
+                        Contacto
+                    </h1>
+                    <div class="section-divider mx-auto mb-6"></div>
+                    <p class="text-gray-600 text-lg">
+                        ¿Interesado en nuestros productos? Contáctanos hoy mismo
+                    </p>
+                </div>
+
+                <!-- CONTENT GRID -->
+                <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                    <!-- LEFT SIDE: Contact Info -->
+                    <div class="space-y-10">
+                        <!-- Dirección -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-rounded text-brand-primary"
+                                    >location_on</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading font-bold text-gray-900 text-lg mb-1"
+                                >
+                                    Dirección
+                                </h3>
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm"
+                                >
+                                    Av. Despensa N° 1550<br />
+                                    José Leonardo Ortiz<br />
+                                    Lambayeque, Perú
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-rounded text-brand-primary"
+                                    >call</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading font-bold text-gray-900 text-lg mb-1"
+                                >
+                                    Teléfono
+                                </h3>
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm"
+                                >
+                                    +51 922 398 538<br />
+                                    +51 973 845 374
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="flex gap-4">
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-50 flex items-center justify-center shrink-0"
+                            >
+                                <span
+                                    class="material-symbols-rounded text-brand-primary"
+                                    >mail</span
+                                >
+                            </div>
+                            <div>
+                                <h3
+                                    class="font-heading font-bold text-gray-900 text-lg mb-1"
+                                >
+                                    Email
+                                </h3>
+                                <p
+                                    class="text-gray-600 leading-relaxed text-sm"
+                                >
+                                    exportadoranorandino@gmail.com<br />
+                                    info.exponorandino@gmail.com
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Horario Box -->
+                        <div
+                            class="bg-emerald-50/50 rounded-2xl p-6 border border-emerald-100 mt-8"
+                        >
+                            <h3
+                                class="font-heading font-bold text-gray-900 text-lg mb-3"
+                            >
+                                Horario de Atención
+                            </h3>
+                            <ul class="text-gray-600 text-sm space-y-2">
+                                <li>Lunes a Viernes: 8:00 AM - 6:00 PM</li>
+                                <li>Sábados: 9:00 AM - 2:00 PM</li>
+                                <li>Domingos: Cerrado</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE: Contact Form -->
+                    <div
+                        class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8"
+                    >
+                        <h2
+                            class="font-heading text-2xl font-bold text-gray-900 mb-6"
+                        >
+                            Envíanos un Mensaje
+                        </h2>
+                        <form
+                            class="space-y-4"
+                            action="#"
+                            method="POST"
+                            onsubmit="event.preventDefault(); alert('Formulario enviado (Demo)');"
+                        >
+                            <div>
+                                <label
+                                    for="nombre"
+                                    class="block text-sm font-medium text-gray-700 mb-1"
+                                    >Nombre</label
+                                >
+                                <input
+                                    type="text"
+                                    id="nombre"
+                                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all"
+                                    placeholder="Tu nombre"
+                                    required
+                                />
+                            </div>
+                            <div>
+                                <label
+                                    for="email"
+                                    class="block text-sm font-medium text-gray-700 mb-1"
+                                    >Email</label
+                                >
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all"
+                                    placeholder="tu@email.com"
+                                    required
+                                />
+                            </div>
+
+                            <div>
+                                <label
+                                    for="mensaje"
+                                    class="block text-sm font-medium text-gray-700 mb-1"
+                                    >Mensaje</label
+                                >
+                                <textarea
+                                    id="mensaje"
+                                    rows="4"
+                                    class="w-full px-4 py-2.5 rounded-lg border border-gray-300 focus:ring-2 focus:ring-brand-primary focus:border-brand-primary outline-none transition-all resize-none"
+                                    placeholder="¿En qué podemos ayudarte?"
+                                    required></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full bg-brand-primary hover:bg-[#005a96] text-white font-bold py-3 px-6 rounded-lg transition-colors mt-4"
+                            >
+                                Enviar Mensaje
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- BOTTOM: Map Section Placeholder -->
+                <div
+                    class="w-full h-96 bg-gray-200 rounded-2xl overflow-hidden shadow-inner relative"
+                >
+                    <!-- Temporary Placeholder instead of an active map since user wants to change it later -->
+                    <div
+                        class="absolute inset-0 flex flex-col items-center justify-center text-gray-500"
+                    >
+                        <span
+                            class="material-symbols-rounded text-5xl mb-2 opacity-50"
+                            >map</span
+                        >
+                        <p class="font-medium">Mapa de Ubicación</p>
+                        <p class="text-sm">
+                            (Inserta aquí el iframe de Google Maps)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <Footer />
+    </body>
+</html>
