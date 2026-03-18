@@ -182,10 +182,10 @@ import ExportMap from "../components/ExportMap.astro";
             <h3 class="font-heading text-2xl font-bold text-brand-primary mb-4">
               Nuestra Empresa
             </h3>
-            <p class="text-gray-600 leading-relaxed">
+            <p class="text-gray-600 leading-relaxed text-justify">
               Exportadora Norandino S.A.C. es una empresa peruana dedicada al
               procesamiento, selección, empaque y exportación de productos
-              agrícolas como <strong
+              agrícolas como <strong class="font-bold"
                 >cebolla (roja y amarilla), ajo y jengibre fresco</strong
               >. Trabajamos bajo estrictos estándares de calidad e inocuidad
               para ofrecer productos confiables en mercados internacionales.
@@ -193,7 +193,9 @@ import ExportMap from "../components/ExportMap.astro";
             <div class="section-divider mt-6"></div>
           </div>
           <!-- Misión -->
-          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 card-lift relative flex flex-col overflow-hidden group">
+          <div
+            class="bg-brand-secondary/15 rounded-2xl shadow-lg border border-brand-secondary/30 card-lift relative flex flex-col overflow-hidden group"
+          >
             <div class="h-48 overflow-hidden">
               <img
                 src="img2.jpg"
@@ -203,21 +205,29 @@ import ExportMap from "../components/ExportMap.astro";
             </div>
             <div class="p-8">
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 rounded-lg bg-brand-secondary/10 flex items-center justify-center shrink-0">
-                  <span class="material-symbols-rounded text-brand-secondary">track_changes</span>
+                <div
+                  class="w-10 h-10 rounded-lg bg-brand-secondary/10 flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-rounded text-brand-secondary"
+                    >track_changes</span
+                  >
                 </div>
-                <h3 class="font-heading text-2xl font-bold text-brand-primary">Misión</h3>
+                <h3 class="font-heading text-2xl font-bold text-brand-primary">
+                  Misión
+                </h3>
               </div>
               <p class="text-gray-600 leading-relaxed text-sm">
-                Garantizar a nuestros clientes productos frescos de cebolla, ajo y
-                jengibre que cumplen estándares internacionales de calidad e
-                inocuidad, mediante procesos eficientes y un compromiso constante
-                con la mejora continua.
+                Garantizar a nuestros clientes productos frescos de cebolla, ajo
+                y jengibre que cumplen estándares internacionales de calidad e
+                inocuidad, mediante procesos eficientes y un compromiso
+                constante con la mejora continua.
               </p>
             </div>
           </div>
           <!-- Visión -->
-          <div class="bg-white rounded-2xl shadow-lg border border-gray-100 card-lift relative flex flex-col overflow-hidden group">
+          <div
+            class="bg-brand-primary/15 rounded-2xl shadow-lg border border-brand-primary/30 card-lift relative flex flex-col overflow-hidden group"
+          >
             <div class="h-48 overflow-hidden">
               <img
                 src="img3.jpg"
@@ -227,15 +237,21 @@ import ExportMap from "../components/ExportMap.astro";
             </div>
             <div class="p-8">
               <div class="flex items-center gap-3 mb-4">
-                <div class="w-10 h-10 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0">
-                  <span class="material-symbols-rounded text-brand-primary">visibility</span>
+                <div
+                  class="w-10 h-10 rounded-lg bg-brand-primary/10 flex items-center justify-center shrink-0"
+                >
+                  <span class="material-symbols-rounded text-brand-primary"
+                    >visibility</span
+                  >
                 </div>
-                <h3 class="font-heading text-2xl font-bold text-brand-primary">Visión</h3>
+                <h3 class="font-heading text-2xl font-bold text-brand-primary">
+                  Visión
+                </h3>
               </div>
               <p class="text-gray-600 leading-relaxed text-sm">
                 Ser una empresa exportadora líder y confiable en el mercado
-                internacional, reconocida por la excelencia de nuestros productos
-                y por relaciones comerciales sostenibles.
+                internacional, reconocida por la excelencia de nuestros
+                productos y por relaciones comerciales sostenibles.
               </p>
             </div>
           </div>
@@ -251,7 +267,7 @@ import ExportMap from "../components/ExportMap.astro";
       <div
         class="max-w-7xl mx-auto reveal-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out"
       >
-        <div class="text-center mb-16">
+        <div class="text-center mb-10">
           <span
             class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
             >Catálogo</span
@@ -265,44 +281,99 @@ import ExportMap from "../components/ExportMap.astro";
         </div>
 
         <div
-          class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-2 gap-4 md:h-[400px] max-w-6xl mx-auto mb-16"
+          class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:h-[700px] max-w-6xl mx-auto mb-16"
         >
+          <!-- Fila 1: Col 1 -->
           <div
-            class="col-span-2 md:col-span-1 md:col-start-1 md:col-end-2 md:row-start-1 md:row-end-3 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="md:col-span-1 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
-              src="img5.jpg"
-              alt="Instalaciones 1"
+              src="img11.jpeg"
+              alt="Galería 1"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
           </div>
+
+          <!-- Fila 1+2: Col 2 (Unida hacia abajo) -->
           <div
-            class="col-span-1 md:col-start-2 md:col-end-4 md:row-start-1 md:row-end-2 h-[160px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="md:col-span-1 md:row-span-2 h-[450px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img9.jpeg"
+              alt="Galería 2"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Fila 1: Col 3+4 -->
+          <div
+            class="md:col-span-2 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img8.jpeg"
+              alt="Galería 3"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Fila 2: Col 1 -->
+          <div
+            class="md:col-span-1 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img4.jpeg"
-              alt="Instalaciones 2"
+              alt="Galería 4"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
           </div>
+
+          <!-- Fila 2: Col 3 -->
           <div
-            class="col-span-1 md:col-start-2 md:col-end-4 md:row-start-2 md:row-end-3 h-[160px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="md:col-span-1 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img10.jpeg"
+              alt="Galería 5"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Fila 2+3: Col 4 (Unida hacia abajo) -->
+          <div
+            class="md:col-span-1 md:row-span-2 h-[450px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+          >
+            <img
+              src="img5.jpeg"
+              alt="Galería 6"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Fila 3: Columna 1 y 2 unidas en la ultima fila -->
+          <div
+            class="md:col-span-2 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img7.jpg"
-              alt="Instalaciones 3"
+              alt="Galería 7"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
           </div>
+
+          <!-- Fila 3: Columna 3 -->
           <div
-            class="col-span-2 md:col-span-1 md:col-start-4 md:col-end-5 md:row-start-1 md:row-end-3 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="md:col-span-1 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img6.jpg"
-              alt="Instalaciones 4"
+              alt="Galería 8"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
@@ -343,7 +414,7 @@ import ExportMap from "../components/ExportMap.astro";
       </div>
 
       <!-- Timeline Alternada (Izquierda/Derecha) -->
-      <div class="relative w-full max-w-4xl mx-auto mb-20 px-4 mt-4">
+      <div class="relative w-full max-w-4xl mx-auto px-4 mt-4">
         <!-- Línea Vertical Central (Desktop) / Izquierda (Mobile) con Degradado Vertical -->
         <div
           class="absolute left-10 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-brand-secondary via-brand-tertiary to-brand-primary md:-translate-x-1/2 z-0"
@@ -635,10 +706,6 @@ import ExportMap from "../components/ExportMap.astro";
           </div>
         </div>
       </div>
-    </div>
-
-    <div>
-      <p class="text-center text-[30px]">Mapa</p>
     </div>
   </section>
 </html>
