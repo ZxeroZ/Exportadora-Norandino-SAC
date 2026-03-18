@@ -1,0 +1,92 @@
+---
+// src/components/ExportMap.astro
+---
+
+<section class="py-16 md:py-24 bg-white relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <span class="text-brand-secondary font-semibold text-sm tracking-widest uppercase">Alcance Global</span>
+      <h2 class="font-heading text-4xl md:text-5xl font-bold text-brand-primary mt-2 mb-4">Exportamos al Mundo</h2>
+      <div class="section-divider mx-auto mb-6"></div>
+      <p class="text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
+        Llevamos la calidad de la agricultura peruana a diversos mercados internacionales, garantizando frescura e inocuidad en cada uno de nuestros destinos.
+      </p>
+    </div>
+
+    <div class="bg-gray-50/50 rounded-[2rem] shadow-xl border border-gray-100 p-4 md:p-8 relative">
+      <div id="vmap" class="w-full h-[350px] md:h-[600px] z-10 relative"></div>
+      
+      <!-- Legend -->
+      <div class="bg-white px-4 py-3 rounded-xl shadow-md border border-gray-100 flex items-center gap-4 text-xs md:text-sm font-medium w-fit mx-auto mt-6">
+          <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-brand-primary"></span>
+              <span class="text-gray-700">Origen (Perú)</span>
+          </div>
+          <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded bg-brand-secondary"></span>
+              <span class="text-gray-700">Mercados de Destino</span>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- jsVectorMap CSS and JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/css/jsvectormap.min.css" />
+<script is:inline src="https://cdn.jsdelivr.net/npm/jsvectormap"></script>
+<script is:inline src="https://cdn.jsdelivr.net/npm/jsvectormap/dist/maps/world.js"></script>
+
+<script is:inline>
+  document.addEventListener('astro:page-load', initMap);
+  document.addEventListener('DOMContentLoaded', initMap);
+
+  function initMap() {
+    const mapContainer = document.getElementById("vmap");
+    // Prevent re-initialization if the map already exists inside the container
+    if (!mapContainer || mapContainer.children.length > 0) return;
+
+    // Destinos de ejemplo. Puedes añadir ISO codes de 2 letras de los países:
+    const exportDestinations = ['US', 'ES', 'NL', 'CO', 'EC', 'CL', 'MX', 'BR', 'CA', 'GB'];
+    
+    new jsVectorMap({
+      selector: "#vmap",
+      map: "world",
+      zoomOnScroll: false,
+      zoomButtons: true,
+      backgroundColor: "transparent",
+      selectedRegions: exportDestinations,
+      regionStyle: {
+        initial: {
+          fill: "#e2e8f0", 
+          stroke: "#ffffff",
+          strokeWidth: 0.5,
+          fillOpacity: 1,
+        },
+        hover: {
+          fillOpacity: 0.8,
+          cursor: 'pointer'
+        },
+        selected: {
+          fill: "#39b54a" // brand-secondary
+        },
+        selectedHover: {
+            fill: "#2eaa40"
+        }
+      },
+      markers: [
+        { name: "Perú (Sede Principal)", coords: [-9.19, -75.01] }
+      ],
+      markerStyle: {
+        initial: { fill: "#0071bc", r: 8, stroke: "#ffffff", strokeWidth: 3 }, // brand-primary
+        hover: { r: 10 }
+      },
+      onRegionTooltipShow(event, tooltip, code) {
+        if (code === 'PE') {
+           tooltip.text('Perú - Centro de Producción y Exportación');
+        } else if (exportDestinations.includes(code)) {
+           tooltip.text(tooltip.text() + ' (Destino de Exportación)');
+        }
+      }
+    });
+  }
+</script>
