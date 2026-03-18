@@ -4,7 +4,7 @@ import "../styles/global.css";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import ProductCarousel from "../components/ProductCarousel.astro";
-import ConstructionPopup from "../components/ConstructionPopup.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
 ---
 
 <html lang="es" class="scroll-smooth">
@@ -24,9 +24,8 @@ import ConstructionPopup from "../components/ConstructionPopup.astro";
       rel="stylesheet"
     />
   </head>
-  <body class="bg-white text-gray-800 font-body antialiased overflow-hidden">
+  <body class="bg-white text-gray-800 font-body antialiased">
     <!-- Popups -->
-    <ConstructionPopup />
 
     <!-- ==================== NAVBAR ==================== -->
     <Navbar />
@@ -149,7 +148,9 @@ import ConstructionPopup from "../components/ConstructionPopup.astro";
       id="nosotros"
       class="pt-12 md:pt-16 pb-4 md:pb-8 px-6 relative overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto">
+      <div
+        class="max-w-7xl mx-auto reveal-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+      >
         <!-- Section Header -->
         <div class="text-center mb-16">
           <span
@@ -236,7 +237,9 @@ import ConstructionPopup from "../components/ConstructionPopup.astro";
       id="productos"
       class="pt-8 md:pt-12 pb-12 md:pb-16 px-6 bg-gradient-to-b from-gray-50/50 to-white relative overflow-hidden"
     >
-      <div class="max-w-7xl mx-auto">
+      <div
+        class="max-w-7xl mx-auto reveal-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+      >
         <div class="text-center mb-16">
           <span
             class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
@@ -267,7 +270,7 @@ import ConstructionPopup from "../components/ConstructionPopup.astro";
             class="col-span-1 md:col-start-2 md:col-end-4 md:row-start-1 md:row-end-2 h-[160px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
-              src="img4.jpg"
+              src="img4.jpeg"
               alt="Instalaciones 2"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
@@ -305,8 +308,10 @@ import ConstructionPopup from "../components/ConstructionPopup.astro";
     id="calidad"
     class="pt-8 md:pt-12 pb-12 md:pb-16 px-6 relative overflow-hidden"
   >
-    <div class="max-w-7xl mx-auto">
-      <div class="text-center mb-16">
+    <div
+      class="max-w-7xl mx-auto reveal-on-scroll opacity-0 translate-y-8 transition-all duration-1000 ease-out"
+    >
+      <div class="text-center mb-6">
         <span
           class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
           >Excelencia</span
@@ -319,212 +324,352 @@ import ConstructionPopup from "../components/ConstructionPopup.astro";
         <div class="section-divider mx-auto"></div>
       </div>
 
-      <!-- Quality Process Description -->
-      <div
-        class="bg-gradient-to-br from-brand-primary to-brand-primary rounded-3xl p-10 mb-12 text-white relative overflow-hidden"
-      >
-        <div class="flex items-start gap-6 flex-col md:flex-row">
-          <div class="icon-circle bg-white/20 flex-shrink-0">
-            <span class="material-symbols-rounded text-3xl"
-              >workspace_premium</span
-            >
-          </div>
-          <div>
-            <h3 class="font-heading text-2xl font-bold mb-4">
-              Nuestro Proceso
-            </h3>
-            <p class="text-white/85 leading-relaxed text-lg">
-              Nuestro proceso integra selección manual, clasificación por
-              calibres, limpieza, empaque y verificación final en planta. Todos
-              los envíos cuentan con trazabilidad, inspección previa y
-              certificación fitosanitaria emitida por el <strong
-                >Servicio Nacional de Sanidad Agraria – SENASA</strong
-              >.
-            </p>
-          </div>
-        </div>
-        <!-- Process Steps -->
-        <div
-          class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10 pt-8 border-t border-white/10"
-        >
-          <div class="text-center">
-            <div
-              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
-            >
-              <span class="material-symbols-rounded">agriculture</span>
-            </div>
-            <p class="text-sm text-white/80 font-medium">Recepción</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
-            >
-              <span class="material-symbols-rounded">pan_tool</span>
-            </div>
-            <p class="text-sm text-white/80 font-medium">Selección Manual</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
-            >
-              <span class="material-symbols-rounded">straighten</span>
-            </div>
-            <p class="text-sm text-white/80 font-medium">Clasificación</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
-            >
-              <span class="material-symbols-rounded">inventory_2</span>
-            </div>
-            <p class="text-sm text-white/80 font-medium">Empaque</p>
-          </div>
-          <div class="text-center">
-            <div
-              class="w-12 h-12 rounded-full bg-white/15 flex items-center justify-center mx-auto mb-3"
-            >
-              <span class="material-symbols-rounded">local_shipping</span>
-            </div>
-            <p class="text-sm text-white/80 font-medium">Exportación</p>
-          </div>
-        </div>
+      <div class="text-center max-w-sm mx-auto mb-10">
+        <p class="text-gray-600 text-sm">
+          Nuestro proceso integral garantiza la calidad desde la recepción hasta
+          la exportación respaldado por la certificación SENASA.
+        </p>
       </div>
 
-      <div class="grid lg:grid-cols-2 gap-8">
-        <!-- Ventajas Competitivas -->
+      <!-- Timeline Alternada (Izquierda/Derecha) -->
+      <div class="relative w-full max-w-4xl mx-auto mb-20 px-4 mt-4">
+        <!-- Línea Vertical Central (Desktop) / Izquierda (Mobile) con Degradado Vertical -->
         <div
-          class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 card-lift"
+          class="absolute left-10 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-brand-secondary via-brand-tertiary to-brand-primary md:-translate-x-1/2 z-0"
         >
-          <div class="flex items-center gap-4 mb-6">
-            <div class="icon-circle">
-              <span class="material-symbols-rounded">trending_up</span>
-            </div>
-            <h3 class="font-heading text-xl font-bold text-brand-primary">
-              Ventajas Competitivas
-            </h3>
-          </div>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
-              ></span>
-              Producto uniforme y selección manual
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
-              ></span>
-              Experiencia exportando a Colombia y República Dominicana
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
-              ></span>
-              Flexibilidad para adaptarnos a los requisitos del cliente
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
-              ></span>
-              Precios competitivos y abastecimiento continuo
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
-              ></span>
-              Planta propia ubicada en Chiclayo, zona agrícola estratégica
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-2 h-2 rounded-full bg-brand-secondary mt-2 flex-shrink-0"
-              ></span>
-              Comunicación directa y eficiente durante todo el proceso
-            </li>
-          </ul>
         </div>
 
-        <!-- Certificaciones -->
-        <div
-          class="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 card-lift"
-        >
-          <div class="flex items-center gap-4 mb-6">
-            <div class="icon-circle">
-              <span class="material-symbols-rounded">verified_user</span>
+        <div class="space-y-10 md:space-y-16 relative z-10 w-full py-4">
+          <!-- Paso 1: Recepción -->
+          <div
+            class="flex flex-row md:flex-row items-center w-full group relative reveal-timeline opacity-0 translate-y-8 transition-all duration-700 ease-out"
+          >
+            <!-- Izquierda Desktop -->
+            <div class="hidden md:flex md:w-1/2 justify-end pr-10">
+              <div
+                class="bg-white border-2 border-brand-secondary/30 rounded-xl p-6 shadow-sm w-full max-w-sm text-right relative hover:shadow-md transition-all"
+              >
+                <div
+                  class="absolute top-1/2 -right-2.5 w-5 h-5 bg-white border-t-2 border-r-2 border-brand-secondary/30 transform rotate-45 -translate-y-1/2"
+                >
+                </div>
+                <div
+                  class="text-xs font-bold text-brand-secondary uppercase tracking-widest mb-1"
+                >
+                  Paso 01
+                </div>
+                <h4 class="font-bold text-gray-800 text-lg mb-2">Recepción</h4>
+                <p class="text-sm text-gray-600">
+                  Ingreso y clasificación inicial del producto directo desde el
+                  campo hacia nuestras instalaciones.
+                </p>
+              </div>
             </div>
-            <h3 class="font-heading text-xl font-bold text-brand-primary">
-              Certificaciones
-            </h3>
+
+            <!-- Círculo -->
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 shrink-0 md:mx-auto rounded-full border-[4px] border-white bg-brand-secondary flex items-center justify-center shadow-md z-10 ml-4 md:ml-0 relative group-hover:scale-110 transition-transform"
+            >
+              <span
+                class="material-symbols-rounded text-lg md:text-2xl text-white"
+                >agriculture</span
+              >
+            </div>
+
+            <!-- Derecha Mobile -->
+            <div class="md:hidden ml-6 w-full pr-4">
+              <div
+                class="bg-white border-2 border-brand-secondary/30 rounded-xl p-5 shadow-sm relative w-full"
+              >
+                <div
+                  class="absolute top-6 -left-2.5 w-5 h-5 bg-white border-b-2 border-l-2 border-brand-secondary/30 transform rotate-45"
+                >
+                </div>
+                <div
+                  class="text-[10px] font-bold text-brand-secondary uppercase tracking-widest mb-1"
+                >
+                  Paso 01
+                </div>
+                <h4 class="font-bold text-gray-800 text-base mb-1">
+                  Recepción
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Ingreso y clasificación inicial del producto directo desde el
+                  campo.
+                </p>
+              </div>
+            </div>
+
+            <!-- Derecha Vacío Desktop -->
+            <div class="hidden md:block w-1/2 pl-10"></div>
           </div>
-          <ul class="space-y-3">
-            <li class="flex items-start gap-3 text-gray-600">
+
+          <!-- Paso 2: Selección Manual -->
+          <div
+            class="flex flex-row md:flex-row items-center w-full group relative reveal-timeline opacity-0 translate-y-8 transition-all duration-700 ease-out delay-100"
+          >
+            <!-- Izquierda Vacío Desktop -->
+            <div class="hidden md:block w-1/2 pr-10"></div>
+
+            <!-- Círculo -->
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 shrink-0 md:mx-auto rounded-full border-[4px] border-white bg-brand-tertiary flex items-center justify-center shadow-md z-10 ml-4 md:ml-0 relative group-hover:scale-110 transition-transform"
+            >
               <span
-                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary flex-shrink-0"
-                ><span class="material-symbols-rounded text-sm">check</span
-                ></span
+                class="material-symbols-rounded text-lg md:text-2xl text-white"
+                >pan_tool</span
               >
-              Certificado fitosanitario SENASA N° 000170-MINAGRI-SENASA-LAMBAYEQUE
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
+            </div>
+
+            <!-- Derecha -->
+            <div class="ml-6 md:ml-0 md:w-1/2 md:pl-10 w-full pr-4 md:pr-0">
+              <div
+                class="bg-white border-2 border-brand-tertiary/30 rounded-xl p-5 md:p-6 shadow-sm relative w-full max-w-sm hover:shadow-md transition-all"
+              >
+                <div
+                  class="absolute top-6 md:top-1/2 -left-2.5 w-5 h-5 bg-white border-b-2 border-l-2 border-brand-tertiary/30 transform rotate-45 md:-translate-y-1/2"
+                >
+                </div>
+                <div
+                  class="text-[10px] md:text-xs font-bold text-brand-tertiary uppercase tracking-widest mb-1"
+                >
+                  Paso 02
+                </div>
+                <h4
+                  class="font-bold text-gray-800 text-base md:text-lg mb-1 md:mb-2"
+                >
+                  Selección Manual
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Revisión exhaustiva y descarte de unidades dañadas o fuera de
+                  norma.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 3: Clasificación -->
+          <div
+            class="flex flex-row md:flex-row items-center w-full group relative reveal-timeline opacity-0 translate-y-8 transition-all duration-700 ease-out delay-200"
+          >
+            <!-- Izquierda Desktop -->
+            <div class="hidden md:flex md:w-1/2 justify-end pr-10">
+              <div
+                class="bg-white border-2 border-[#2e9e7b]/30 rounded-xl p-6 shadow-sm w-full max-w-sm text-right relative hover:shadow-md transition-all"
+              >
+                <div
+                  class="absolute top-1/2 -right-2.5 w-5 h-5 bg-white border-t-2 border-r-2 border-[#2e9e7b]/30 transform rotate-45 -translate-y-1/2"
+                >
+                </div>
+                <div
+                  class="text-xs font-bold text-[#2e9e7b] uppercase tracking-widest mb-1"
+                >
+                  Paso 03
+                </div>
+                <h4 class="font-bold text-gray-800 text-lg mb-2">
+                  Clasificación
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Agrupación cuidadosa por calibres y tamaños según los
+                  requerimientos.
+                </p>
+              </div>
+            </div>
+
+            <!-- Círculo -->
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 shrink-0 md:mx-auto rounded-full border-[4px] border-white bg-[#2e9e7b] flex items-center justify-center shadow-md z-10 ml-4 md:ml-0 relative group-hover:scale-110 transition-transform"
+            >
               <span
-                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary flex-shrink-0"
-                ><span class="material-symbols-rounded text-sm">check</span
-                ></span
+                class="material-symbols-rounded text-lg md:text-2xl text-white"
+                >straighten</span
               >
-              Código SENASA planta empacadora: N° 004-00058PE
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
+            </div>
+
+            <!-- Derecha Mobile -->
+            <div class="md:hidden ml-6 w-full pr-4">
+              <div
+                class="bg-white border-2 border-[#2e9e7b]/30 rounded-xl p-5 shadow-sm relative w-full"
+              >
+                <div
+                  class="absolute top-6 -left-2.5 w-5 h-5 bg-white border-b-2 border-l-2 border-[#2e9e7b]/30 transform rotate-45"
+                >
+                </div>
+                <div
+                  class="text-[10px] font-bold text-[#2e9e7b] uppercase tracking-widest mb-1"
+                >
+                  Paso 03
+                </div>
+                <h4 class="font-bold text-gray-800 text-base mb-1">
+                  Clasificación
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Agrupación cuidadosa por calibres y tamaños según los
+                  requerimientos.
+                </p>
+              </div>
+            </div>
+
+            <!-- Derecha Vacío Desktop -->
+            <div class="hidden md:block w-1/2 pl-10"></div>
+          </div>
+
+          <!-- Paso 4: Empaque -->
+          <div
+            class="flex flex-row md:flex-row items-center w-full group relative reveal-timeline opacity-0 translate-y-8 transition-all duration-700 ease-out delay-300"
+          >
+            <!-- Izquierda Vacío Desktop -->
+            <div class="hidden md:block w-1/2 pr-10"></div>
+
+            <!-- Círculo -->
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 shrink-0 md:mx-auto rounded-full border-[4px] border-white bg-[#0081a7] flex items-center justify-center shadow-md z-10 ml-4 md:ml-0 relative group-hover:scale-110 transition-transform"
+            >
               <span
-                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
-                >✓</span
+                class="material-symbols-rounded text-lg md:text-2xl text-white"
+                >inventory_2</span
               >
-              Certificado de origen (cámara de comercio)
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
+            </div>
+
+            <!-- Derecha -->
+            <div class="ml-6 md:ml-0 md:w-1/2 md:pl-10 w-full pr-4 md:pr-0">
+              <div
+                class="bg-white border-2 border-[#0081a7]/30 rounded-xl p-5 md:p-6 shadow-sm relative w-full max-w-sm hover:shadow-md transition-all"
+              >
+                <div
+                  class="absolute top-6 md:top-1/2 -left-2.5 w-5 h-5 bg-white border-b-2 border-l-2 border-[#0081a7]/30 transform rotate-45 md:-translate-y-1/2"
+                >
+                </div>
+                <div
+                  class="text-[10px] md:text-xs font-bold text-[#0081a7] uppercase tracking-widest mb-1"
+                >
+                  Paso 04
+                </div>
+                <h4
+                  class="font-bold text-gray-800 text-base md:text-lg mb-1 md:mb-2"
+                >
+                  Empaque
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Embalaje seguro e identificación exacta para mantener la
+                  trazabilidad.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Paso 5: Exportación -->
+          <div
+            class="flex flex-row md:flex-row items-center w-full group relative reveal-timeline opacity-0 translate-y-8 transition-all duration-700 ease-out delay-400"
+          >
+            <!-- Izquierda Desktop -->
+            <div class="hidden md:flex md:w-1/2 justify-end pr-10">
+              <div
+                class="bg-white border-2 border-brand-primary/30 rounded-xl p-6 shadow-sm w-full max-w-sm text-right relative hover:shadow-md transition-all"
+              >
+                <div
+                  class="absolute top-1/2 -right-2.5 w-5 h-5 bg-white border-t-2 border-r-2 border-brand-primary/30 transform rotate-45 -translate-y-1/2"
+                >
+                </div>
+                <div
+                  class="text-xs font-bold text-brand-primary uppercase tracking-widest mb-1"
+                >
+                  Paso 05
+                </div>
+                <h4 class="font-bold text-gray-800 text-lg mb-2">
+                  Exportación
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Despacho internacional eficiente con certificación y
+                  trazabilidad garantizada.
+                </p>
+              </div>
+            </div>
+
+            <!-- Círculo -->
+            <div
+              class="w-12 h-12 md:w-16 md:h-16 shrink-0 md:mx-auto rounded-full border-[4px] border-white bg-brand-primary flex items-center justify-center shadow-lg z-10 ml-4 md:ml-0 relative group-hover:scale-110 transition-transform"
+            >
               <span
-                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
-                >✓</span
+                class="material-symbols-rounded text-lg md:text-3xl text-white"
+                >local_shipping</span
               >
-              Trazabilidad garantizada
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
-                >✓</span
+            </div>
+
+            <!-- Derecha Mobile -->
+            <div class="md:hidden ml-6 w-full pr-4">
+              <div
+                class="bg-white border-2 border-brand-primary/30 rounded-xl p-5 shadow-sm relative w-full"
               >
-              Buenas prácticas de manipulación
-            </li>
-            <li class="flex items-start gap-3 text-gray-600">
-              <span
-                class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-brand-primary text-xs flex-shrink-0"
-                >✓</span
-              >
-              Cumplimiento de requisitos sanitarios y legales del país de origen
-            </li>
-          </ul>
+                <div
+                  class="absolute top-6 -left-2.5 w-5 h-5 bg-white border-b-2 border-l-2 border-brand-primary/30 transform rotate-45"
+                >
+                </div>
+                <div
+                  class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1"
+                >
+                  Paso 05
+                </div>
+                <h4 class="font-bold text-gray-800 text-base mb-1">
+                  Exportación
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Despacho internacional con certificación garantizada.
+                </p>
+              </div>
+            </div>
+
+            <!-- Derecha Vacío Desktop -->
+            <div class="hidden md:block w-1/2 pl-10"></div>
+          </div>
         </div>
       </div>
     </div>
+    <!-- Cierra el div max-w-7xl inicial de la sección Calidad (que incluía al padding del timeline) -->
+
+    <!-- Contenedor separado para Ventajas y Certificaciones dentro de la misma sección #calidad -->
   </section>
-
-  <!-- ==================== FOOTER / CONTACTO ==================== -->
-  <Footer />
-
-  <!-- ==================== SCRIPTS ==================== -->
-  <script>
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("animate-fade-up");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 },
-    );
-    document.querySelectorAll("section > div").forEach((el) => {
-      observer.observe(el);
-    });
-  </script>
 </html>
+<!-- Cierra mb-16 relative z-10 del bloque de Ventajas -->
+
+<!-- ==================== FOOTER / CONTACTO ==================== -->
+<Footer />
+
+<WhatsAppButton />
+
+<!-- ==================== SCRIPTS ==================== -->
+<script>
+  // Global Scroll Animation para las secciones principales
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-8");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 },
+  );
+  document.querySelectorAll(".reveal-on-scroll").forEach((el) => {
+    revealObserver.observe(el);
+  });
+
+  // Timeline Scroll Animación (específico)
+  const timelineObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-8");
+          entry.target.classList.add("opacity-100", "translate-y-0");
+          timelineObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 },
+  );
+  document.querySelectorAll(".reveal-timeline").forEach((el) => {
+    timelineObserver.observe(el);
+  });
+</script>

@@ -1,100 +1,235 @@
 ---
-
+// src/components/Footer.astro
 ---
 
-<footer id="contacto" class="bg-gray-900 text-white relative overflow-hidden">
-    <!-- Top green accent -->
+<footer
+    id="contacto"
+    class="relative overflow-hidden bg-gradient-to-b from-white to-gray-100 pt-16 pb-8"
+>
+    <!-- Barra superior de acento con degradado -->
     <div
-        class="h-1 bg-gradient-to-r from-brand-secondary via-brand-tertiary to-brand-secondary"
+        class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-brand-primary via-brand-secondary to-brand-tertiary"
     >
     </div>
-    <div class="max-w-7xl mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-3 gap-12">
-            <!-- Brand -->
-            <div>
-                <div class="flex items-center gap-3 mb-6">
-                    <div
-                        class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-secondary to-brand-primary flex items-center justify-center text-white font-bold text-xl shadow-lg"
-                    >
-                        N
-                    </div>
-                    <div>
-                        <span
-                            class="font-heading font-bold text-2xl tracking-tight"
-                            >NORANDINO</span
-                        >
-                        <span
-                            class="block text-xs text-gray-400 tracking-[0.2em] -mt-1"
-                            >S.A.C.</span
-                        >
-                    </div>
-                </div>
-                <p class="text-gray-400 text-sm leading-relaxed">
+
+    <!-- Decoración de fondo sutil -->
+    <div
+        class="absolute bottom-0 right-0 w-1/2 h-full bg-gradient-to-tl from-brand-secondary/5 to-transparent pointer-events-none"
+    >
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+            <!-- Columna 1: Branding -->
+            <div class="space-y-6">
+                <!-- Logo integrado naturalmente sin contenedor blanco -->
+                <a href="/#" class="inline-block group">
+                    <img
+                        src="/logo.png"
+                        alt="Logo Norandino"
+                        class="h-14 md:h-16 w-auto object-contain transition-transform duration-500 group-hover:scale-105"
+                    />
+                </a>
+                <p class="text-gray-600 text-sm leading-relaxed max-w-xs">
                     Exportadora Norandino S.A.C. — Calidad agrícola peruana para
-                    el mundo. Procesamiento, selección y exportación de
+                    el mundo. Especialistas en el procesamiento y exportación de
                     productos frescos.
                 </p>
-            </div>
-            <!-- Contact Info -->
-            <div>
-                <h3 class="text-lg font-bold mb-6 text-white">Contacto</h3>
-                <div class="space-y-4 text-sm text-gray-300">
-                    <p class="flex items-start gap-3">
-                        <span
-                            class="material-symbols-rounded text-brand-tertiary text-lg"
-                            >location_on</span
+                <!-- Redes Sociales -->
+                <div class="flex items-center gap-4">
+                    <a
+                        href="#"
+                        class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-gray-400 hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm border border-gray-100 hover:border-brand-secondary hover:-translate-y-1"
+                        aria-label="Facebook"
+                    >
+                        <svg
+                            class="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+                            ></path></svg
                         >
-                        Av. Despensa N° 1550 - José Leonardo Ortiz, Lambayeque – Perú
-                    </p>
-                    <p class="flex items-center gap-3">
-                        <span
-                            class="material-symbols-rounded text-brand-tertiary text-lg"
-                            >call</span
+                    </a>
+                    <a
+                        href="#"
+                        class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-gray-400 hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm border border-gray-100 hover:border-brand-secondary hover:-translate-y-1"
+                        aria-label="Instagram"
+                    >
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            ><rect
+                                x="2"
+                                y="2"
+                                width="20"
+                                height="20"
+                                rx="5"
+                                ry="5"></rect><path
+                                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+                            ></path></svg
                         >
-                        922 398 538 / 973 845 374
-                    </p>
-                    <p class="flex items-center gap-3">
-                        <span
-                            class="material-symbols-rounded text-brand-tertiary text-lg"
-                            >mail</span
+                    </a>
+                    <a
+                        href="#"
+                        class="w-10 h-10 rounded-xl bg-white flex items-center justify-center text-gray-400 hover:bg-brand-secondary hover:text-white transition-all duration-300 shadow-sm border border-gray-100 hover:border-brand-secondary hover:-translate-y-1"
+                        aria-label="LinkedIn"
+                    >
+                        <svg
+                            class="w-5 h-5"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                            ><path
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+                            ></path><circle cx="4" cy="4" r="2"></circle></svg
                         >
-                        exportadoranorandino@gmail.com
-                    </p>
-                    <p class="flex items-center gap-3">
-                        <span
-                            class="material-symbols-rounded text-brand-tertiary text-lg"
-                            >mail</span
-                        >
-                        info.exponorandino@gmail.com
-                    </p>
+                    </a>
                 </div>
             </div>
-            <!-- CTA -->
-            <div class="flex flex-col justify-center items-center md:items-end">
-                <a
-                    href="https://wa.link/28wvxq"
-                    target="_blank"
-                    rel="noopener"
-                    class="wa-pulse bg-brand-secondary hover:bg-brand-400 text-white font-bold py-4 px-8 rounded-2xl flex items-center gap-3 transition-all duration-300 hover:shadow-xl hover:shadow-brand-secondary/25 text-lg"
+
+            <!-- Columna 2: Navegación -->
+            <div>
+                <h3
+                    class="text-brand-primary font-bold text-lg mb-6 flex items-center gap-2"
                 >
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"
-                        ><path
-                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
-                            ></path></svg
-                    >
-                    WhatsApp
-                </a>
-                <p class="text-gray-500 text-xs mt-4">
-                    Respuesta inmediata
-                </p>
+                    <span class="w-1.5 h-1.5 bg-brand-secondary rounded-full"
+                    ></span> Enlaces Rápidos
+                </h3>
+                <ul class="space-y-4">
+                    <li>
+                        <a
+                            href="/"
+                            class="text-gray-600 hover:text-brand-secondary transition-colors text-sm flex items-center gap-2 group"
+                            ><span
+                                class="material-symbols-rounded text-[14px] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-brand-secondary"
+                                >chevron_right</span
+                            > Inicio</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/#nosotros"
+                            class="text-gray-600 hover:text-brand-secondary transition-colors text-sm flex items-center gap-2 group"
+                            ><span
+                                class="material-symbols-rounded text-[14px] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-brand-secondary"
+                                >chevron_right</span
+                            > Nosotros</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/#productos"
+                            class="text-gray-600 hover:text-brand-secondary transition-colors text-sm flex items-center gap-2 group"
+                            ><span
+                                class="material-symbols-rounded text-[14px] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-brand-secondary"
+                                >chevron_right</span
+                            > Productos</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/#calidad"
+                            class="text-gray-600 hover:text-brand-secondary transition-colors text-sm flex items-center gap-2 group"
+                            ><span
+                                class="material-symbols-rounded text-[14px] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-brand-secondary"
+                                >chevron_right</span
+                            > Calidad</a>
+                    </li>
+                    <li>
+                        <a
+                            href="/contacto"
+                            class="text-brand-primary font-medium hover:text-brand-secondary transition-colors text-sm flex items-center gap-2 group"
+                            ><span
+                                class="material-symbols-rounded text-[14px] opacity-0 -ml-4 group-hover:opacity-100 group-hover:ml-0 transition-all text-brand-secondary"
+                                >chevron_right</span
+                            > Contáctanos</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Contacto Directo -->
+            <div>
+                <h3
+                    class="text-brand-primary font-bold text-lg mb-6 flex items-center gap-2"
+                >
+                    <span class="w-1.5 h-1.5 bg-brand-secondary rounded-full"
+                    ></span> Ubicación y Contacto
+                </h3>
+                <div class="space-y-5">
+                    <div class="flex items-start gap-4 group">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-white shadow-sm border border-gray-100 flex items-center justify-center group-hover:bg-brand-secondary transition-colors duration-300 shrink-0"
+                        >
+                            <span
+                                class="material-symbols-rounded text-brand-secondary group-hover:text-white text-[20px]"
+                                >location_on</span
+                            >
+                        </div>
+                        <p class="text-gray-600 text-xs leading-relaxed mt-1">
+                            Av. Despensa N° 1550<br />J.L. Ortiz, Lambayeque –
+                            Perú
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-4 group">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-white shadow-sm border border-gray-100 flex items-center justify-center group-hover:bg-brand-secondary transition-colors duration-300 shrink-0"
+                        >
+                            <span
+                                class="material-symbols-rounded text-brand-secondary group-hover:text-white text-[20px]"
+                                >call</span
+                            >
+                        </div>
+                        <div class="text-gray-600 text-xs flex flex-col gap-1">
+                            <p>+51 922 398 538</p>
+                            <p>+51 973 845 374</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 group">
+                        <div
+                            class="w-9 h-9 rounded-xl bg-white shadow-sm border border-gray-100 flex items-center justify-center group-hover:bg-brand-secondary transition-colors duration-300 shrink-0"
+                        >
+                            <span
+                                class="material-symbols-rounded text-brand-secondary group-hover:text-white text-[20px]"
+                                >mail</span
+                            >
+                        </div>
+                        <div
+                            class="text-gray-600 text-[11px] sm:text-xs break-all mt-1 flex flex-col gap-1"
+                        >
+                            <a
+                                href="mailto:exportadoranorandino@gmail.com"
+                                class="hover:text-brand-secondary transition-colors"
+                                >exportadoranorandino@gmail.com</a
+                            >
+                            <a
+                                href="mailto:info@exportadoranorandino.com"
+                                class="hover:text-brand-secondary transition-colors"
+                                >info@exportadoranorandino.com</a
+                            >
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <!-- Bottom bar -->
+
+        <!-- Copyright -->
         <div
-            class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-500 text-sm"
+            class="mt-8 pt-8 border-t border-gray-200 text-center flex flex-col md:flex-row justify-between items-center gap-4"
         >
-            &copy; 2026 Exportadora Norandino S.A.C. Todos los derechos
-            reservados.
+            <p
+                class="text-gray-500 text-[11px] uppercase tracking-widest font-medium"
+            >
+                &copy; 2026 Exportadora Norandino S.A.C.
+            </p>
+            <p class="text-gray-400 text-[10px] uppercase tracking-widest">
+                Todos los derechos reservados.
+            </p>
         </div>
     </div>
 </footer>
+
+<style>
+    h3 {
+        letter-spacing: 0.025em;
+    }
+</style>
