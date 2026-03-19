@@ -150,7 +150,7 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
                             class="space-y-4"
                             action="#"
                             method="POST"
-                            onsubmit="event.preventDefault(); alert('Formulario enviado (Demo)');"
+                            id="contact-form"
                         >
                             <div>
                                 <label
@@ -201,26 +201,53 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
                                 Enviar Mensaje
                             </button>
                         </form>
+                        <script is:inline>
+                            (function () {
+                                var f = document.getElementById("contact-form");
+                                if (!f) return;
+                                f.addEventListener("submit", function (e) {
+                                    e.preventDefault();
+                                    var n =
+                                        document.getElementById("nombre")
+                                            .value || "";
+                                    var em =
+                                        document.getElementById("email")
+                                            .value || "";
+                                    var msg =
+                                        document.getElementById("mensaje")
+                                            .value || "";
+                                    var txt = encodeURIComponent(
+                                        "Hola, soy " +
+                                            n +
+                                            " (" +
+                                            em +
+                                            ").\n\n" +
+                                            msg,
+                                    );
+                                    window.open(
+                                        "https://wa.me/51921113910?text=" + txt,
+                                        "_blank",
+                                    );
+                                });
+                            })();
+                        </script>
                     </div>
                 </div>
 
-                <!-- BOTTOM: Map Section Placeholder -->
+                <!-- BOTTOM: Map Section -->
                 <div
                     class="w-full h-96 bg-gray-200 rounded-2xl overflow-hidden shadow-inner relative"
                 >
-                    <!-- Temporary Placeholder instead of an active map since user wants to change it later -->
-                    <div
-                        class="absolute inset-0 flex flex-col items-center justify-center text-gray-500"
-                    >
-                        <span
-                            class="material-symbols-rounded text-5xl mb-2 opacity-50"
-                            >map</span
-                        >
-                        <p class="font-medium">Mapa de Ubicación</p>
-                        <p class="text-sm">
-                            (Inserta aquí el iframe de Google Maps)
-                        </p>
-                    </div>
+                    <iframe
+                        title="Ubicación de Exportadora Norandino S.A.C."
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        src="https://maps.google.com/maps?q=Centro+Campestre+La+Despensa,+José+Leonardo+Ortiz,+Lambayeque,+Perú&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </main>

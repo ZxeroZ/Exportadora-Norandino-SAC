@@ -31,9 +31,9 @@ import ExportMap from "../components/ExportMap.astro";
     <!-- ==================== NAVBAR ==================== -->
     <Navbar />
 
-    <section class="pb-8 md:px-6 bg-white overflow-hidden">
+    <section class="pb-8 md:px-6 px-4 bg-white overflow-hidden">
       <div
-        class="max-w-7xl mx-auto relative md:rounded-[2.5rem] rounded-b-3xl overflow-hidden h-[calc(100vh-80px)] md:h-[calc(100vh-140px)] min-h-[550px] flex items-center"
+        class="max-w-7xl mx-auto relative rounded-2xl md:rounded-[2.5rem] overflow-hidden h-[65vmax] md:h-[calc(100vh-140px)] min-h-[400px] md:min-h-[550px] flex items-center"
       >
         <!-- Background Image -->
         <div class="absolute inset-0 bg-[#06140b]">
@@ -49,7 +49,7 @@ import ExportMap from "../components/ExportMap.astro";
           </div>
         </div>
         <!-- Content -->
-        <div class="relative z-10 p-6 md:p-12 lg:p-16 w-full mt-8 md:mt-0">
+        <div class="relative z-10 p-6 md:p-12 lg:p-16 w-full mt-24 md:mt-0">
           <div class="max-w-xl">
             <div class="animate-fade-up">
               <span
@@ -88,9 +88,9 @@ import ExportMap from "../components/ExportMap.astro";
               </a>
             </div>
 
-            <!-- Floating Cards -->
+            <!-- Floating Cards (only visible on desktop) -->
             <div
-              class="animate-fade-up delay-400 flex flex-wrap items-center gap-3 mt-8 md:mt-16"
+              class="animate-fade-up delay-400 hidden md:flex flex-wrap items-center gap-3 mt-16"
             >
               <!-- Dark Card -->
               <div
@@ -143,6 +143,49 @@ import ExportMap from "../components/ExportMap.astro";
         </div>
       </div>
     </section>
+
+    <!-- Mobile-only: Cards below the hero, stacked vertically -->
+    <div class="flex md:hidden flex-row gap-3 px-4 pb-6 bg-white">
+      <!-- Dark Card -->
+      <div
+        class="bg-[#2D333F] rounded-2xl p-4 flex items-center gap-3 border border-brand-secondary/50 shadow-md w-full"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-brand-secondary/20 flex flex-shrink-0 items-center justify-center"
+        >
+          <div class="w-4 h-4 rounded-full bg-brand-secondary blur-[2px]"></div>
+        </div>
+        <div>
+          <div
+            class="flex items-center gap-1 text-white font-bold text-sm mb-0"
+          >
+            <span class="material-symbols-rounded text-xs text-gray-400"
+              >verified</span
+            >
+            SENASA
+          </div>
+          <p class="text-[10px] text-gray-300 leading-tight">
+            Certificación y Empaque
+          </p>
+        </div>
+      </div>
+
+      <!-- Light Card -->
+      <div
+        class="bg-white rounded-2xl p-4 flex items-center gap-3 shadow-md border border-brand-primary/30 w-full"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-brand-tertiary flex flex-shrink-0 items-center justify-center text-white shadow-inner"
+        >
+          <span class="material-symbols-rounded text-[20px]">star</span>
+        </div>
+        <div>
+          <div class="font-bold text-gray-800 text-[13px] leading-tight">
+            Control de Calidad
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- ==================== QUIÉNES SOMOS ==================== -->
     <section
@@ -281,11 +324,11 @@ import ExportMap from "../components/ExportMap.astro";
         </div>
 
         <div
-          class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:h-[700px] max-w-6xl mx-auto mb-16"
+          class="grid grid-cols-2 md:grid-cols-4 md:grid-rows-3 gap-3 md:gap-4 md:h-[700px] max-w-6xl mx-auto mb-16"
         >
-          <!-- Fila 1: Col 1 -->
+          <!-- Fila 1: Col 1 — mobile: full width hero -->
           <div
-            class="md:col-span-1 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-2 md:col-span-1 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img11.jpeg"
@@ -295,9 +338,9 @@ import ExportMap from "../components/ExportMap.astro";
             />
           </div>
 
-          <!-- Fila 1+2: Col 2 (Unida hacia abajo) -->
+          <!-- Fila 1+2: Col 2 (Unida hacia abajo) — mobile: normal 1 col -->
           <div
-            class="md:col-span-1 md:row-span-2 h-[450px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-1 md:col-span-1 md:row-span-2 h-[180px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img9.jpeg"
@@ -307,9 +350,9 @@ import ExportMap from "../components/ExportMap.astro";
             />
           </div>
 
-          <!-- Fila 1: Col 3+4 -->
+          <!-- Col 3+4 — mobile: 1 col -->
           <div
-            class="md:col-span-2 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-1 md:col-span-2 h-[180px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img8.jpeg"
@@ -319,9 +362,9 @@ import ExportMap from "../components/ExportMap.astro";
             />
           </div>
 
-          <!-- Fila 2: Col 1 -->
+          <!-- Fila 2: Col 1 — mobile: 1 col -->
           <div
-            class="md:col-span-1 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-1 md:col-span-1 h-[180px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img4.jpeg"
@@ -331,9 +374,9 @@ import ExportMap from "../components/ExportMap.astro";
             />
           </div>
 
-          <!-- Fila 2: Col 3 -->
+          <!-- Fila 2: Col 3 — mobile: 1 col -->
           <div
-            class="md:col-span-1 h-[200px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-1 md:col-span-1 h-[180px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img10.jpeg"
@@ -343,9 +386,9 @@ import ExportMap from "../components/ExportMap.astro";
             />
           </div>
 
-          <!-- Fila 2+3: Col 4 (Unida hacia abajo) -->
+          <!-- Fila 2+3: Col 4 (Unida hacia abajo) — mobile: normal 1 col -->
           <div
-            class="md:col-span-1 md:row-span-2 h-[450px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-1 md:col-span-1 md:row-span-2 h-[180px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
               src="img5.jpeg"
@@ -355,25 +398,25 @@ import ExportMap from "../components/ExportMap.astro";
             />
           </div>
 
-          <!-- Fila 3: Columna 1 y 2 unidas en la ultima fila -->
+          <!-- Fila 3: Col 3 — mobile: 1 col (sube aquí para llenar el espacio) -->
           <div
-            class="md:col-span-2 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-1 md:col-span-1 h-[180px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
-              src="img7.jpg"
-              alt="Galería 7"
+              src="img6.jpg"
+              alt="Galería 8"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
           </div>
 
-          <!-- Fila 3: Columna 3 -->
+          <!-- Fila 3: Col 1+2 unidas — mobile: full width final -->
           <div
-            class="md:col-span-1 h-[250px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
+            class="col-span-2 md:col-span-2 h-[160px] md:h-auto rounded-2xl overflow-hidden group shadow-md"
           >
             <img
-              src="img6.jpg"
-              alt="Galería 8"
+              src="img7.jpg"
+              alt="Galería 7"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               loading="lazy"
             />
