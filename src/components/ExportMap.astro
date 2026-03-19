@@ -2,7 +2,9 @@
 // src/components/ExportMap.astro
 ---
 
-<section class="py-16 md:py-24 bg-white relative overflow-hidden">
+<section
+  class="pt-8 md:pt-10 pb-12 md:pb-16 bg-white relative overflow-visible"
+>
   <div class="max-w-7xl mx-auto px-6">
     <!-- Section Header -->
     <div class="text-center mb-12">
@@ -66,7 +68,7 @@
         </div>
 
         <!-- Map -->
-        <div id="vmap" class="w-full h-[500px] md:h-[750px] z-10 relative">
+        <div id="vmap" class="w-full z-10 relative" style="height: 400px;">
         </div>
 
         <!-- Legend -->
@@ -163,7 +165,7 @@
     // Only the 3 export destinations
     var exportDestinations = ["CO", "DO", "CR"];
 
-    new jsVectorMap({
+    var map = new jsVectorMap({
       selector: "#vmap",
       map: "world",
       zoomOnScroll: false,
@@ -171,7 +173,7 @@
       backgroundColor: "transparent",
       focusOn: {
         coords: [5, -78],
-        scale: 6.5,
+        scale: 4.5,
       },
       selectedRegions: exportDestinations,
       regionStyle: {
@@ -213,6 +215,13 @@
         }
       },
     });
+
+    // Force re-render at the correct container size
+    setTimeout(function () {
+      if (map && typeof map.updateSize === "function") {
+        map.updateSize();
+      }
+    }, 100);
   }
 </script>
 
