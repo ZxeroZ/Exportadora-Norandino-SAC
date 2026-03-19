@@ -36,7 +36,12 @@
           <div
             class="flex flex-col items-center bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span class="text-2xl mb-1">🇨🇴</span>
+            <img
+              src="https://flagcdn.com/w40/co.png"
+              srcset="https://flagcdn.com/w80/co.png 2x"
+              alt="Colombia"
+              class="w-8 h-auto rounded mb-1 shadow-sm"
+            />
             <p
               class="font-bold text-gray-800 text-xs text-center leading-tight"
             >
@@ -47,7 +52,12 @@
           <div
             class="flex flex-col items-center bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span class="text-2xl mb-1">🇩🇴</span>
+            <img
+              src="https://flagcdn.com/w40/do.png"
+              srcset="https://flagcdn.com/w80/do.png 2x"
+              alt="República Dominicana"
+              class="w-8 h-auto rounded mb-1 shadow-sm"
+            />
             <p
               class="font-bold text-gray-800 text-xs text-center leading-tight"
             >
@@ -58,7 +68,12 @@
           <div
             class="flex flex-col items-center bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
           >
-            <span class="text-2xl mb-1">🇨🇷</span>
+            <img
+              src="https://flagcdn.com/w40/cr.png"
+              srcset="https://flagcdn.com/w80/cr.png 2x"
+              alt="Costa Rica"
+              class="w-8 h-auto rounded mb-1 shadow-sm"
+            />
             <p
               class="font-bold text-gray-800 text-xs text-center leading-tight"
             >
@@ -165,16 +180,16 @@
     // Only the 3 export destinations
     var exportDestinations = ["CO", "DO", "CR"];
 
+    var isMobile = window.innerWidth < 1024;
     var map = new jsVectorMap({
       selector: "#vmap",
       map: "world",
       zoomOnScroll: false,
       zoomButtons: false,
       backgroundColor: "transparent",
-      focusOn: {
-        coords: [5, -78],
-        scale: 4.5,
-      },
+      focusOn: isMobile
+        ? { coords: [8, -68], scale: 5 }
+        : { coords: [5, -78], scale: 4.5 },
       selectedRegions: exportDestinations,
       regionStyle: {
         initial: {
