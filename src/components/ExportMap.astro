@@ -3,6 +3,7 @@
 ---
 
 <section
+  id="exportaciones"
   class="pt-8 md:pt-10 pb-12 md:pb-16 bg-white relative overflow-visible"
 >
   <div class="max-w-7xl mx-auto px-6">
@@ -103,55 +104,55 @@
         </div>
       </div>
 
-      <!-- RIGHT: Certificados Carousel -->
-      <div
-        class="flex flex-col justify-center gap-4 w-full overflow-hidden h-full py-8 text-center"
-      >
-        <div>
-          <span
-            class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
-          >
-            Nuestros Certificados
-          </span>
-        </div>
+      <!-- RIGHT: Respaldo y Certificaciones -->
+      <div class="flex flex-col justify-center overflow-hidden">
+        <!-- Franja de color superior -->
 
-        <!-- 1-by-1 Carousel -->
-        <div
-          class="relative w-[240px] max-w-full mx-auto overflow-hidden py-4 rounded-2xl"
-        >
-          <div class="flex slider-track-1by1" style="width: 400%;">
-            <!-- Item 1 -->
-            <div class="w-1/4 px-2">
-              <div
-                class="bg-white rounded-2xl shadow-md border border-gray-100 aspect-[4/3] flex items-center justify-center text-6xl font-bold text-gray-300"
-              >
-                1
-              </div>
+        <div class="flex flex-col py-10 px-8">
+          <!-- Encabezado -->
+          <div class="text-center mb-8">
+            <span
+              class="text-brand-secondary font-semibold text-md tracking-widest uppercase block"
+            >
+              Respaldo y Certificaciones
+            </span>
+            <div class="w-12 h-1 bg-brand-secondary mx-auto mt-2 rounded-full">
             </div>
-            <!-- Item 2 -->
-            <div class="w-1/4 px-2">
-              <div
-                class="bg-white rounded-2xl shadow-md border border-gray-100 aspect-[4/3] flex items-center justify-center text-6xl font-bold text-gray-300"
-              >
-                2
-              </div>
-            </div>
-            <!-- Item 3 -->
-            <div class="w-1/4 px-2">
-              <div
-                class="bg-white rounded-2xl shadow-md border border-gray-100 aspect-[4/3] flex items-center justify-center text-6xl font-bold text-gray-300"
-              >
-                3
-              </div>
-            </div>
-            <!-- Item 1 (Clone) -->
-            <div class="w-1/4 px-2">
-              <div
-                class="bg-white rounded-2xl shadow-md border border-gray-100 aspect-[4/3] flex items-center justify-center text-6xl font-bold text-gray-300"
-              >
-                1
-              </div>
-            </div>
+          </div>
+
+          <!-- Bloque 1: Certificado en cada envío -->
+          <div class="flex flex-col items-center text-center pb-8">
+            <p
+              class="text-brand-primary text-xs font-semibold uppercase tracking-widest mb-4"
+            >
+              Contamos con certificado en cada envío de:
+            </p>
+            <img
+              src="senasa2.png"
+              alt="Institución Certificadora"
+              class="max-h-28 w-auto object-contain"
+            />
+          </div>
+
+          <!-- Separador -->
+          <div
+            class="w-2/3 mx-auto h-px mb-8"
+            style="background: linear-gradient(90deg, #0071bc55, #39b54a55);"
+          >
+          </div>
+
+          <!-- Bloque 2: Pertenecemos a -->
+          <div class="flex flex-col items-center text-center">
+            <p
+              class="text-brand-primary text-xs font-semibold uppercase tracking-widest mb-4"
+            >
+              Pertenecemos a:
+            </p>
+            <img
+              src="prom.png"
+              alt="Asociación o Membresía"
+              class="max-h-28 w-auto object-contain"
+            />
           </div>
         </div>
       </div>
@@ -188,7 +189,7 @@
       zoomButtons: false,
       backgroundColor: "transparent",
       focusOn: isMobile
-        ? { coords: [8, -68], scale: 5 }
+        ? { coords: [6, -68], scale: 5 }
         : { coords: [5, -78], scale: 4.5 },
       selectedRegions: exportDestinations,
       regionStyle: {
@@ -239,29 +240,3 @@
     }, 100);
   }
 </script>
-
-<style>
-  .slider-track-1by1 {
-    animation: slideOneByOne 12s ease-in-out infinite;
-  }
-  .slider-track-1by1:hover {
-    animation-play-state: paused;
-  }
-  @keyframes slideOneByOne {
-    0%,
-    25% {
-      transform: translateX(0%);
-    }
-    33.33%,
-    58.33% {
-      transform: translateX(-25%);
-    }
-    66.66%,
-    91.66% {
-      transform: translateX(-50%);
-    }
-    100% {
-      transform: translateX(-75%);
-    }
-  }
-</style>

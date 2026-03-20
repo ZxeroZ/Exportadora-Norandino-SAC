@@ -219,11 +219,12 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
                                     var txt = encodeURIComponent(
                                         "Hola, soy " +
                                             n +
-                                            " (" +
+                                            ", el correo de contacto es: " +
                                             em +
-                                            ").\n\n" +
+                                            " y mi consulta es: " +
                                             msg,
                                     );
+
                                     window.open(
                                         "https://wa.me/51921113910?text=" + txt,
                                         "_blank",
