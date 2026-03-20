@@ -32,26 +32,28 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
         <main class="flex-grow pt-4 pb-16 px-6">
             <div class="max-w-6xl mx-auto">
                 <!-- HEADER -->
-                <div class="text-center mb-12 mt-2">
+                <div class="text-center mb-8 mt-2">
                     <span
-                        class="text-brand-secondary font-semibold text-sm tracking-widest uppercase"
+                        class="text-brand-secondary font-semibold text-xs tracking-widest uppercase"
                         >Comunícate</span
                     >
                     <h1
-                        class="font-heading text-4xl md:text-5xl font-bold text-brand-primary mt-2 mb-4"
+                        class="font-heading text-3xl md:text-5xl font-bold text-brand-primary mt-2 mb-3"
                     >
                         Contacto
                     </h1>
-                    <div class="section-divider mx-auto mb-6"></div>
-                    <p class="text-gray-600 text-lg">
+                    <div class="section-divider mx-auto mb-4"></div>
+                    <p class="text-gray-600 text-sm md:text-lg">
                         ¿Interesado en nuestros productos? Contáctanos hoy mismo
                     </p>
                 </div>
 
                 <!-- CONTENT GRID -->
-                <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                <div
+                    class="grid lg:grid-cols-2 gap-6 md:gap-12 items-start mb-10 md:mb-16"
+                >
                     <!-- LEFT SIDE: Contact Info -->
-                    <div class="space-y-10">
+                    <div class="space-y-6 md:space-y-10">
                         <!-- Dirección -->
                         <div class="flex gap-4">
                             <div
@@ -139,10 +141,10 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
 
                     <!-- RIGHT SIDE: Contact Form -->
                     <div
-                        class="bg-white rounded-2xl shadow-sm border border-gray-100 p-8"
+                        class="bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-8"
                     >
                         <h2
-                            class="font-heading text-2xl font-bold text-gray-900 mb-6"
+                            class="font-heading text-xl md:text-2xl font-bold text-gray-900 mb-4 md:mb-6"
                         >
                             Envíanos un Mensaje
                         </h2>
@@ -229,6 +231,7 @@ import WhatsAppButton from "../components/WhatsAppButton.astro";
                                         "https://wa.me/51921113910?text=" + txt,
                                         "_blank",
                                     );
+                                    f.reset();
                                 });
                             })();
                         </script>
