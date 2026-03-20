@@ -34,53 +34,85 @@
         class="bg-gray-50/50 rounded-[2rem] shadow-xl border border-gray-100 p-4 md:p-6 relative flex flex-col gap-4"
       >
         <!-- Country cards ABOVE the map -->
-        <div class="grid grid-cols-3 gap-3">
+        <div class="grid grid-cols-5 gap-1 md:gap-2">
           <!-- Colombia -->
           <div
-            class="flex flex-col items-center bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            class="flex flex-col items-center bg-white rounded-xl p-1.5 md:p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
           >
             <img
               src="https://flagcdn.com/w40/co.png"
               srcset="https://flagcdn.com/w80/co.png 2x"
               alt="Colombia"
-              class="w-8 h-auto rounded mb-1 shadow-sm"
+              class="w-6 md:w-8 h-auto rounded mb-1 shadow-sm"
             />
             <p
-              class="font-bold text-gray-800 text-xs text-center leading-tight"
+              class="font-bold text-gray-800 text-[9px] md:text-xs text-center leading-tight"
             >
               Colombia
             </p>
           </div>
           <!-- República Dominicana -->
           <div
-            class="flex flex-col items-center bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            class="flex flex-col items-center bg-white rounded-xl p-1.5 md:p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
           >
             <img
               src="https://flagcdn.com/w40/do.png"
               srcset="https://flagcdn.com/w80/do.png 2x"
-              alt="República Dominicana"
-              class="w-8 h-auto rounded mb-1 shadow-sm"
+              alt="Rep. Dominicana"
+              class="w-6 md:w-8 h-auto rounded mb-1 shadow-sm"
             />
             <p
-              class="font-bold text-gray-800 text-xs text-center leading-tight"
+              class="font-semibold text-gray-800 text-[9px] md:text-xs text-center leading-tight"
             >
-              Rep. Dominicana
+              Rep. Dom.
             </p>
           </div>
           <!-- Costa Rica -->
           <div
-            class="flex flex-col items-center bg-white rounded-2xl p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+            class="flex flex-col items-center bg-white rounded-xl p-1.5 md:p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
           >
             <img
               src="https://flagcdn.com/w40/cr.png"
               srcset="https://flagcdn.com/w80/cr.png 2x"
               alt="Costa Rica"
-              class="w-8 h-auto rounded mb-1 shadow-sm"
+              class="w-6 md:w-8 h-auto rounded mb-1 shadow-sm"
             />
             <p
-              class="font-bold text-gray-800 text-xs text-center leading-tight"
+              class="font-bold text-gray-800 text-[9px] md:text-xs text-center leading-tight"
             >
               Costa Rica
+            </p>
+          </div>
+          <!-- Panamá -->
+          <div
+            class="flex flex-col items-center bg-white rounded-xl p-1.5 md:p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <img
+              src="https://flagcdn.com/w40/pa.png"
+              srcset="https://flagcdn.com/w80/pa.png 2x"
+              alt="Panamá"
+              class="w-6 md:w-8 h-auto rounded mb-1 shadow-sm"
+            />
+            <p
+              class="font-bold text-gray-800 text-[9px] md:text-xs text-center leading-tight"
+            >
+              Panamá
+            </p>
+          </div>
+          <!-- Estados Unidos -->
+          <div
+            class="flex flex-col items-center bg-white rounded-xl p-1.5 md:p-3 border border-gray-100 shadow-sm hover:shadow-md transition-shadow"
+          >
+            <img
+              src="https://flagcdn.com/w40/us.png"
+              srcset="https://flagcdn.com/w80/us.png 2x"
+              alt="Estados Unidos"
+              class="w-6 md:w-8 h-auto rounded mb-1 shadow-sm"
+            />
+            <p
+              class="font-bold text-gray-800 text-[9px] md:text-xs text-center leading-tight"
+            >
+              EE.UU.
             </p>
           </div>
         </div>
@@ -181,7 +213,7 @@
     if (!mapContainer || mapContainer.children.length > 0) return;
 
     // Only the 3 export destinations
-    var exportDestinations = ["CO", "DO", "CR"];
+    var exportDestinations = ["CO", "DO", "CR", "PA", "US"];
 
     var isMobile = window.innerWidth < 1024;
     var map = new jsVectorMap({
@@ -191,8 +223,8 @@
       zoomButtons: false,
       backgroundColor: "transparent",
       focusOn: isMobile
-        ? { coords: [6, -68], scale: 5 }
-        : { coords: [5, -78], scale: 4.5 },
+        ? { coords: [20, -88], scale: 4.5 }
+        : { coords: [5, -78], scale: 2.5 },
       selectedRegions: exportDestinations,
       regionStyle: {
         initial: {
@@ -222,6 +254,8 @@
           CO: "Colombia",
           DO: "República Dominicana",
           CR: "Costa Rica",
+          PA: "Panamá",
+          US: "Estados Unidos",
           PE: "Perú",
         };
         if (code === "PE") {
@@ -238,6 +272,11 @@
     setTimeout(function () {
       if (map && typeof map.updateSize === "function") {
         map.updateSize();
+      }
+      // On mobile: disable drag/pan so page scroll works normally
+      if (isMobile && mapContainer) {
+        mapContainer.style.pointerEvents = "none";
+        mapContainer.style.touchAction = "auto";
       }
     }, 100);
   }
